@@ -41,22 +41,25 @@ h2 {
 }
 
 .gallery {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: flex;               /* Utilise Flexbox pour aligner les images */
+    justify-content: space-around; /* Espace entre les images */
+    flex-wrap: wrap;            /* Permet à la galerie de se réajuster si l'espace est limité */
+    margin: 0 auto;             /* Centre la galerie */
+    max-width: 1200px;          /* Limite la largeur maximum de la galerie */
 }
 
 .gallery img {
-    width: 45%;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    width: 30%;                 /* Définit la largeur des images à 30% de la galerie */
+    margin-bottom: 1rem;       /* Espace en bas des images */
+    border-radius: 8px;        /* Arrondit les coins des images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajoute une ombre aux images */
+    transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05);    /* Zoom léger au survol de l'image */
 }
+
 
 form {
     display: flex;
