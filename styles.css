@@ -49,11 +49,15 @@ h2 {
 }
 
 .gallery img {
-    width: 30%;                 /* Définit la largeur des images à 30% de la galerie */
-    margin-bottom: 1rem;       /* Espace en bas des images */
-    border-radius: 8px;        /* Arrondit les coins des images */
+    width: 30%;                    /* Définit la largeur des images à 30% de la galerie */
+    max-width: 300px;             /* Définit une largeur maximale pour éviter les images trop grandes */
+    height: auto;                  /* Garde le rapport d'aspect des images */
+    margin: 0 10px;               /* Espace entre les images */
+    border-radius: 8px;           /* Arrondit les coins des images */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajoute une ombre aux images */
     transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
+}
+
 }
 
 .gallery img:hover {
