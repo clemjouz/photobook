@@ -13,23 +13,23 @@ header {
 }
 
 .gallery {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: flex;                     /* Utiliser flexbox pour l'alignement */
+    justify-content: space-around;     /* Espacement uniforme entre les images */
+    flex-wrap: wrap;                   /* Permettre le retour à la ligne si nécessaire */
     margin: 20px;
 }
 
 .cover-image {
-    width: 30%; /* Largeur de chaque image */
-    max-width: 300px; /* Largeur maximale */
-    height: auto; /* Garder le ratio */
-    border-radius: 8px; /* Coins arrondis */
+    width: 30%;                       /* Largeur de chaque image */
+    max-width: 400px;                 /* Largeur maximale */
+    height: auto;                     /* Garder le ratio */
+    border-radius: 8px;               /* Coins arrondis */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre sous les images */
-    transition: transform 0.3s; /* Transition pour effet de zoom */
+    transition: transform 0.3s;       /* Transition pour effet de zoom */
 }
 
 .cover-image:hover {
-    transform: scale(1.05); /* Zoom léger au survol */
+    transform: scale(1.05);           /* Zoom léger au survol */
 }
 
 footer {
@@ -41,7 +41,3 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-    color: #fff;
-}
-
