@@ -1,106 +1,47 @@
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f0f0f0;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
     text-align: center;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-section {
-    padding: 2rem;
-}
-
-h2 {
-    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #007BFF;
+    color: white;
 }
 
 .gallery {
-    display: flex;               /* Utilise Flexbox pour aligner les images */
-    justify-content: space-around; /* Espace entre les images */
-    flex-wrap: wrap;            /* Permet à la galerie de se réajuster si l'espace est limité */
-    margin: 0 auto;             /* Centre la galerie */
-    max-width: 1200px;          /* Limite la largeur maximum de la galerie */
-}
-
-.gallery img {
-    width: 30%;                    /* Définit la largeur des images à 30% de la galerie */
-    max-width: 300px;             /* Définit une largeur maximale pour éviter les images trop grandes */
-    height: auto;                  /* Garde le rapport d'aspect des images */
-    margin: 0 10px;               /* Espace entre les images */
-    border-radius: 8px;           /* Arrondit les coins des images */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajoute une ombre aux images */
-    transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
-}
-
-}
-
-.gallery img:hover {
-    transform: scale(1.05);    /* Zoom léger au survol de l'image */
-}
-
-
-form {
     display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
 }
 
-form label {
-    margin: 10px 0 5px;
+.cover-image {
+    width: 30%; /* Largeur de chaque image */
+    max-width: 300px; /* Largeur maximale */
+    height: auto; /* Garder le ratio */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre sous les images */
+    transition: transform 0.3s; /* Transition pour effet de zoom */
 }
 
-form input, form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-form button:hover {
-    background-color: #555;
+.cover-image:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
 }
 
 footer {
     text-align: center;
     padding: 1rem;
-    background: #333;
+    background-color: #007BFF;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
     color: #fff;
 }
 
