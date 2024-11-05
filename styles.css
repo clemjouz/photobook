@@ -9,11 +9,33 @@ body {
 header, footer {
     text-align: center;
     padding: 1rem;
-    background-color: #007BFF;
+    background: linear-gradient(90deg, #0062cc, #0033cc); /* Dégradé de bleu */
     color: white;
     max-width: 1200px;        /* Largeur maximale uniforme */
     margin: 0 auto;           /* Centre le header et le footer */
     width: 100%;              /* Largeur complète dans leur conteneur */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner du relief */
+    border-radius: 8px;       /* Coins légèrement arrondis */
+}
+
+/* Style du titre dans le header */
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Ombre légère sur le texte */
+}
+
+/* Style du texte dans le footer */
+footer p {
+    font-size: 0.9em;
+    margin: 0;
+    letter-spacing: 0.5px;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Ombre légère sur le texte */
 }
 
 /* Conteneur global pour centrer tout le contenu de la page */
