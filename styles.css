@@ -5,26 +5,32 @@ body {
     background-color: #f0f0f0;
 }
 
-header {
+/* Styles uniformisés pour le header et le footer */
+header, footer {
     text-align: center;
     padding: 1rem;
     background-color: #007BFF;
     color: white;
+    max-width: 1200px;     /* Largeur maximale uniforme */
+    margin: 0 auto;        /* Centre le contenu dans la page */
+    width: 100%;
 }
 
+/* Style de la galerie */
 .gallery {
-    display: flex;                     /* Utiliser flexbox pour l'alignement */
+    display: flex;                     /* Flexbox pour l'alignement des images */
     justify-content: center;           /* Centre les images horizontalement */
-    align-items: center;               /* Centre les images verticalement, si nécessaire */
     gap: 40px;                         /* Espace entre les images */
-    margin: 20px auto;                 /* Centrer la galerie dans la page */
-    max-width: 1200px;                 /* Limite la largeur de la galerie */
+    margin: 20px auto;                 /* Centre la galerie et espace en haut et en bas */
+    max-width: 1200px;                 /* Largeur maximale uniforme */
+    padding: 0 20px;                   /* Espacement latéral pour le contenu */
 }
 
+/* Style des images */
 .cover-image {
-    width: 100%;                       /* Les images prennent toute la largeur du conteneur */
-    max-width: 300px;                  /* Taille maximale des images */
-    height: auto;                      /* Conserve le ratio de l'image */
+    width: 100%;                       /* Les images remplissent le conteneur */
+    max-width: 300px;                  /* Limite la taille pour un bon équilibre */
+    height: auto;                      /* Maintien des proportions */
     border-radius: 8px;                /* Coins arrondis */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre sous les images */
     transition: transform 0.3s;        /* Transition pour effet de zoom */
@@ -34,12 +40,8 @@ header {
     transform: scale(1.05);            /* Zoom léger au survol */
 }
 
+/* Footer toujours en bas de la page */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #007BFF;
-    color: white;
     position: relative;
     bottom: 0;
-    width: 100%;
 }
