@@ -15,14 +15,16 @@ header {
 .gallery {
     display: flex;                     /* Utiliser flexbox pour l'alignement */
     justify-content: center;           /* Centre les images horizontalement */
-    gap: 20px;                         /* Espace entre les images */
-    margin: 20px;
+    align-items: center;               /* Centre les images verticalement, si nécessaire */
+    gap: 40px;                         /* Espace entre les images */
+    margin: 20px auto;                 /* Centrer la galerie dans la page */
+    max-width: 1200px;                 /* Limite la largeur de la galerie */
 }
 
 .cover-image {
-    width: 30%;                        /* Largeur de chaque image (ajuste si besoin) */
-    max-width: 300px;                  /* Largeur maximale par image */
-    height: auto;                      /* Maintenir le ratio */
+    width: 100%;                       /* Les images prennent toute la largeur du conteneur */
+    max-width: 300px;                  /* Taille maximale des images */
+    height: auto;                      /* Conserve le ratio de l'image */
     border-radius: 8px;                /* Coins arrondis */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre sous les images */
     transition: transform 0.3s;        /* Transition pour effet de zoom */
