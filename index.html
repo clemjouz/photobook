@@ -45,36 +45,6 @@
             color: #bdc3c7; /* Couleur gris clair pour le texte */
         }
 
-        /* Conteneur global pour centrer tout le contenu de la page */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px; /* Espacement autour du contenu */
-        }
-
-        /* Style de la galerie */
-        .gallery {
-            display: flex; /* Flexbox pour l'alignement des images */
-            justify-content: center; /* Centre les images horizontalement */
-            gap: 40px; /* Espace entre les images */
-            margin: 20px 0; /* Espace en haut et en bas */
-            padding: 0 20px; /* Espacement latéral */
-        }
-
-        /* Style des images */
-        .cover-image {
-            width: 100%; /* Les images remplissent le conteneur */
-            max-width: 300px; /* Limite la taille pour un bon équilibre */
-            height: auto; /* Maintien des proportions */
-            border-radius: 8px; /* Coins arrondis */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre sous les images */
-            transition: transform 0.3s; /* Transition pour effet de zoom */
-        }
-
-        .cover-image:hover {
-            transform: scale(1.05); /* Zoom léger au survol */
-        }
-
         /* Icône du menu hamburger */
         .menu-icon {
             font-size: 30px;
@@ -115,6 +85,36 @@
             background-color: #2c3e50; /* Couleur foncée au survol */
         }
 
+        /* Conteneur global pour centrer tout le contenu de la page */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px; /* Espacement autour du contenu */
+        }
+
+        /* Style de la galerie */
+        .gallery {
+            display: flex; /* Flexbox pour l'alignement des images */
+            justify-content: center; /* Centre les images horizontalement */
+            gap: 40px; /* Espace entre les images */
+            margin: 20px 0; /* Espace en haut et en bas */
+            padding: 0 20px; /* Espacement latéral */
+        }
+
+        /* Style des images */
+        .cover-image {
+            width: 100%; /* Les images remplissent le conteneur */
+            max-width: 300px; /* Limite la taille pour un bon équilibre */
+            height: auto; /* Maintien des proportions */
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre sous les images */
+            transition: transform 0.3s; /* Transition pour effet de zoom */
+        }
+
+        .cover-image:hover {
+            transform: scale(1.05); /* Zoom léger au survol */
+        }
+
         /* Bouton de fermeture */
         .close-btn {
             font-size: 36px;
@@ -122,10 +122,18 @@
             top: 20px;
             right: 20px;
             cursor: pointer;
+            color: white; /* Couleur pour le bouton de fermeture */
         }
     </style>
 </head>
 <body>
+    <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+    <div id="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
+        <a href="page1.html">Volume 1</a>
+        <a href="page2.html">Volume 2</a>
+        <a href="page3.html">Volume 3</a>
+    </div>
     <div class="container">
         <header>
             <h1>Je suis sorti de ma chambre</h1>
@@ -148,5 +156,20 @@
     <footer>
         <p>&copy; 2024 Clément Jouzeau. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.width === '250px') {
+                closeSidebar();
+            } else {
+                sidebar.style.width = '250px'; // Ouvrir le menu
+            }
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').style.width = '0'; // Fermer le menu
+        }
+    </script>
 </body>
 </html>
