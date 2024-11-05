@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Icône de menu pour ouvrir le menu latéral -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+    <!-- Menu latéral -->
+    <div id="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+        <a href="page1.html">Page 1</a>
+        <a href="page2.html">Page 2</a>
+        <a href="page3.html">Page 3</a>
+    </div>
+
     <div class="container">
         <header>
             <h1>Je suis sorti de ma chambre</h1>
@@ -29,6 +40,17 @@
     <footer>
         <p>&copy; 2024 Clément Jouzeau. Tous droits réservés.</p>
     </footer>
-</body>
 
+    <!-- Script JavaScript pour le menu latéral -->
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+    </script>
+</body>
 </html>
