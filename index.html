@@ -52,6 +52,16 @@
             padding: 20px; /* Espacement autour du contenu */
         }
 
+        /* Nouvelle section "Le projet" */
+        .project-section {
+            background-color: #ecf0f1; /* Fond clair pour se démarquer */
+            border-radius: 8px; /* Coins arrondis */
+            padding: 20px; /* Espacement interne */
+            margin: 20px 0; /* Espace autour de la section */
+            text-align: center; /* Centre le texte */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+        }
+
         /* Nouvelle section avec barre verticale */
         .split-section {
             display: flex; /* Utiliser Flexbox pour une mise en page en colonnes */
@@ -164,11 +174,26 @@
             <h1>Je suis sorti de ma chambre</h1>
         </header>
 
+        <!-- Nouvelle section "Le projet" -->
+        <div class="project-section">
+            <h2>Le projet</h2>
+            <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
+        </div>
+
         <!-- Nouvelle section séparée par une barre verticale -->
         <div class="split-section">
             <div class="column">
                 <h2>Version photo</h2>
-                  <div class="gallery">
+                <p>Description de la version photo. Vous pouvez y mettre des informations ou un lien vers les images.</p>
+            </div>
+            <div class="separator"></div>
+            <div class="column">
+                <h2>Version audio</h2>
+                <p>Description de la version audio. Vous pouvez y mettre des informations ou un lien vers les fichiers audio.</p>
+            </div>
+        </div>
+
+        <div class="gallery">
             <!-- Les images sont maintenant des liens vers leurs pages respectives -->
             <a href="page1.html" target="_blank">
                 <img src="1.jpg" alt="Volume 1" class="cover-image">
@@ -179,35 +204,8 @@
             <a href="page3.html" target="_blank">
                 <img src="3.jpg" alt="Volume 3" class="cover-image">
             </a>
-            </div>
-            <div class="separator"></div>
-            <div class="column">
-                <h2>Version audio</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OM3xP1qRNvM?si=bX-ZefKo5v5XchTX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        </div>
-
-    
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Clément Jouzeau. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar.style.width === '250px') {
-                closeSidebar();
-            } else {
-                sidebar.style.width = '250px'; // Ouvrir le menu
-            }
-        }
-
-        function closeSidebar() {
-            document.getElementById('sidebar').style.width = '0'; // Fermer le menu
-        }
-    </script>
-</body>
-</html>
+        <
