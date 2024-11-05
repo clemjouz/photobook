@@ -11,9 +11,16 @@ header, footer {
     padding: 1rem;
     background-color: #007BFF;
     color: white;
-    max-width: 1200px;     /* Largeur maximale uniforme */
-    margin: 0 auto;        /* Centre le contenu dans la page */
-    width: 100%;
+    max-width: 1200px;        /* Largeur maximale uniforme */
+    margin: 0 auto;           /* Centre le header et le footer */
+    width: 100%;              /* Largeur complète dans leur conteneur */
+}
+
+/* Conteneur global pour centrer tout le contenu de la page */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;            /* Espacement autour du contenu */
 }
 
 /* Style de la galerie */
@@ -21,9 +28,8 @@ header, footer {
     display: flex;                     /* Flexbox pour l'alignement des images */
     justify-content: center;           /* Centre les images horizontalement */
     gap: 40px;                         /* Espace entre les images */
-    margin: 20px auto;                 /* Centre la galerie et espace en haut et en bas */
-    max-width: 1200px;                 /* Largeur maximale uniforme */
-    padding: 0 20px;                   /* Espacement latéral pour le contenu */
+    margin: 20px 0;                    /* Espace en haut et en bas */
+    padding: 0 20px;                   /* Espacement latéral */
 }
 
 /* Style des images */
@@ -38,10 +44,4 @@ header, footer {
 
 .cover-image:hover {
     transform: scale(1.05);            /* Zoom léger au survol */
-}
-
-/* Footer toujours en bas de la page */
-footer {
-    position: relative;
-    bottom: 0;
 }
