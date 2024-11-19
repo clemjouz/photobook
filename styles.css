@@ -137,14 +137,14 @@ footer p {
     align-items: center; /* Centre verticalement */
 }
 
-/* Ajustements pour que le texte à l'intérieur de la section "Le projet" soit bien visible */
+/* Style du titre "Le projet" */
 .project-section h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin: 0 0 10px;
+    font-size: 4em; /* Taille de police plus grande */
+    font-weight: 300; /* Police fine */
+    text-transform: uppercase; /* Texte en majuscules */
+    margin: 0 0 10px; /* Espacement en bas */
+    letter-spacing: 2px; /* Espacement des lettres pour plus d'air */
+    color: #2c3e50; /* Couleur sombre pour contraster avec le fond clair */
 }
 
-.project-section p {
-    font-size: 1.2em;
-    line-height: 1.6;
 }
