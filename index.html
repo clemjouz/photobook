@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
+            width: 100%; /* Permet à body de prendre toute la largeur */
         }
 
         /* Styles uniformisés pour le header et le footer */
@@ -19,12 +20,11 @@
             padding: 1.5rem; /* Espacement accru pour un look aéré */
             background-color: #2c3e50; /* Couleur gris foncé */
             color: #ecf0f1; /* Couleur claire pour le texte */
-            max-width: 1200px; /* Largeur maximale uniforme */
-            margin: 0 auto; /* Centre le header et le footer */
-            width: 100%; /* Largeur complète dans leur conteneur */
+            width: 100%; /* Largeur complète pour header et footer */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce pour donner du relief */
             border-radius: 8px; /* Coins légèrement arrondis */
             position: relative; /* Pour le positionnement des éléments internes */
+            margin: 0; /* Supprime toute marge externe */
         }
 
         /* Style du titre dans le header */
@@ -47,9 +47,8 @@
 
         /* Conteneur global pour centrer tout le contenu de la page */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 20px; /* Espacement autour du contenu */
+            width: 100%; /* Permet à .container de prendre toute la largeur */
         }
 
         /* Nouvelle section "Le projet" */
@@ -94,6 +93,7 @@
             gap: 40px; /* Espace entre les images */
             margin: 20px 0; /* Espace en haut et en bas */
             padding: 0 20px; /* Espacement latéral */
+            width: 100%; /* Permet à la galerie de prendre toute la largeur */
         }
 
         /* Style des images */
@@ -177,7 +177,7 @@
         <!-- Nouvelle section "Le projet" -->
         <div class="project-section">
             <h2>Le projet</h2>
-          <br>  <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
+            <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
         </div>
 
         <!-- Nouvelle section séparée par une barre verticale -->
@@ -189,7 +189,8 @@
             <div class="separator"></div>
             <div class="column">
                 <h2>Ecouter sur Spotify</h2>
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1l9iNunM0ZShQIoMRG0uGh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>            </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1l9iNunM0ZShQIoMRG0uGh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
         </div>
 
         <div class="gallery">
@@ -205,6 +206,11 @@
             </a>
         </div>
     </div>
+
+    <footer>
+        @Clem_jouz
+    </footer>
+
 <script>
     // Fonction pour ouvrir le menu latéral
     function toggleSidebar() {
@@ -221,6 +227,5 @@
         document.getElementById('sidebar').style.width = '0';
     }
 </script>
-
-    <footer>
-        @Clem_jouz
+</body>
+</html>
