@@ -12,6 +12,9 @@
             padding: 0;
             background-color: #f0f0f0;
             width: 100%; /* Permet à body de prendre toute la largeur */
+            height: 100vh; /* Assure que le body prenne toute la hauteur de la fenêtre */
+            display: flex;
+            flex-direction: column; /* Organise les éléments de haut en bas */
         }
 
         /* Styles uniformisés pour le header et le footer */
@@ -49,6 +52,10 @@
         .container {
             padding: 20px; /* Espacement autour du contenu */
             width: 100%; /* Permet à .container de prendre toute la largeur */
+            flex-grow: 1; /* Permet à cette section de prendre tout l'espace restant */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribue l'espace entre les sections */
         }
 
         /* Nouvelle section "Le projet" */
