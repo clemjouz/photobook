@@ -11,6 +11,8 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
+            height: 100%; /* Assure que le body occupe toute la hauteur */
+            overflow-y: auto; /* Permet de défiler toute la page */
         }
 
         /* Styles uniformisés pour le header et le footer */
@@ -177,7 +179,7 @@
         <!-- Nouvelle section "Le projet" -->
         <div class="project-section">
             <h2>Le projet</h2>
-          <br>  <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
+            <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
         </div>
 
         <!-- Nouvelle section séparée par une barre verticale -->
@@ -189,38 +191,35 @@
             <div class="separator"></div>
             <div class="column">
                 <h2>Ecouter sur Spotify</h2>
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1l9iNunM0ZShQIoMRG0uGh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>            </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1l9iNunM0ZShQIoMRG0uGh?utm_source=generator&theme=0" width="100%" height="232" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
         </div>
 
+        <!-- Galerie d'images -->
         <div class="gallery">
-            <!-- Les images sont maintenant des liens vers leurs pages respectives -->
-            <a href="page1.html" target="_blank">
-                <img src="1.jpg" alt="Volume 1" class="cover-image">
-            </a>
-            <a href="page2.html" target="_blank">
-                <img src="2.jpg" alt="Volume 2" class="cover-image">
-            </a>
-            <a href="page3.html" target="_blank">
-                <img src="3.jpg" alt="Volume 3" class="cover-image">
-            </a>
+            <img class="cover-image" src="image1.jpg" alt="Image 1">
+            <img class="cover-image" src="image2.jpg" alt="Image 2">
+            <img class="cover-image" src="image3.jpg" alt="Image 3">
         </div>
+
+        <footer>
+            <p>&copy; 2024 Tous droits réservés</p>
+        </footer>
     </div>
-<script>
-    // Fonction pour ouvrir le menu latéral
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        if (sidebar.style.width === '250px') {
-            sidebar.style.width = '0';
-        } else {
-            sidebar.style.width = '250px';
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
         }
-    }
 
-    // Fonction pour fermer le menu latéral
-    function closeSidebar() {
-        document.getElementById('sidebar').style.width = '0';
-    }
-</script>
-
-    <footer>
-        @Clem_jouz
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+    </script>
+</body>
+</html>
