@@ -131,20 +131,32 @@ footer p {
     margin: 20px 0; /* Espace autour de la section */
     text-align: center; /* Centre le texte */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
-    height: 100vh; /* Hauteur de la fenêtre de vue pour occuper tout l'écran */
     display: flex; /* Utilise Flexbox pour centrer le contenu */
     justify-content: center; /* Centre horizontalement */
     align-items: center; /* Centre verticalement */
+    flex-direction: column; /* Aligne le contenu verticalement */
+    min-height: 80vh; /* Hauteur minimale pour ne pas trop occuper de place */
 }
 
 /* Style du titre "Le projet" */
 .project-section h2 {
-    font-size: 4em; /* Taille de police plus grande */
+    font-size: 6em; /* Taille de police encore plus grande */
     font-weight: 300; /* Police fine */
     text-transform: uppercase; /* Texte en majuscules */
-    margin: 0 0 10px; /* Espacement en bas */
-    letter-spacing: 2px; /* Espacement des lettres pour plus d'air */
+    margin: 0; /* Supprime les marges par défaut */
+    letter-spacing: 3px; /* Espacement des lettres pour plus d'air */
     color: #2c3e50; /* Couleur sombre pour contraster avec le fond clair */
+    line-height: 1.2; /* Hauteur de ligne pour plus d'espace autour du texte */
+}
+
+/* Style de la description sous le titre */
+.project-section p {
+    font-size: 1.5em; /* Taille de la police pour la description */
+    color: #7f8c8d; /* Couleur de texte plus douce */
+    margin-top: 20px; /* Espacement entre le titre et la description */
+    line-height: 1.6; /* Hauteur de ligne pour rendre le texte aéré */
+}
+
 }
 
 }
