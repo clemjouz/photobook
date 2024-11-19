@@ -205,6 +205,22 @@
             </a>
         </div>
     </div>
+<script>
+    // Fonction pour ouvrir le menu latéral
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.style.width === '250px') {
+            sidebar.style.width = '0';
+        } else {
+            sidebar.style.width = '250px';
+        }
+    }
+
+    // Fonction pour fermer le menu latéral
+    function closeSidebar() {
+        document.getElementById('sidebar').style.width = '0';
+    }
+</script>
 
     <footer>
         <
