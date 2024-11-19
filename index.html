@@ -7,66 +7,79 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+    <!-- Menu latéral -->
     <div id="sidebar">
         <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
         <a href="page1.html">Volume 1</a>
         <a href="page2.html">Volume 2</a>
         <a href="page3.html">Volume 3</a>
     </div>
-    <div class="container">
-        <header>
-            <h1>Je suis sorti de ma chambre</h1>
-        </header>
 
-        <!-- Nouvelle section "Le projet" -->
-        <div class="project-section">
-            <h2>Le projet</h2>
-            <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
+    <!-- Conteneur global du diaporama -->
+    <div class="slideshow-container">
+        <!-- Slide 1: L'entête -->
+        <div class="slide">
+            <header>
+                <div class="menu-icon" onclick="toggleSidebar()" aria-label="Ouvrir le menu">&#9776;</div>
+                <h1>Je suis sorti de ma chambre</h1>
+            </header>
         </div>
 
-        <!-- Nouvelle section séparée par une barre verticale -->
-        <div class="split-section">
-            <div class="column">
-                <h2>Retrouvez le livre sur YouTube</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OM3xP1qRNvM?si=bX-ZefKo5v5XchTX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="separator"></div>
-            <div class="column">
-                <h2>Ecouter sur Spotify</h2>
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1l9iNunM0ZShQIoMRG0uGh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <!-- Slide 2: Le projet -->
+        <div class="slide">
+            <div class="project-section">
+                <h2>Le projet</h2>
+                <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
             </div>
         </div>
 
-        <div class="gallery">
-            <!-- Les images sont maintenant des liens vers leurs pages respectives -->
-            <a href="page1.html" target="_blank">
-                <img src="1.jpg" alt="Volume 1" class="cover-image">
-            </a>
-            <a href="page2.html" target="_blank">
-                <img src="2.jpg" alt="Volume 2" class="cover-image">
-            </a>
-            <a href="page3.html" target="_blank">
-                <img src="3.jpg" alt="Volume 3" class="cover-image">
-            </a>
+        <!-- Slide 3: Vidéos -->
+        <div class="slide">
+            <div class="split-section">
+                <div class="column">
+                    <h2>Retrouvez le livre sur YouTube</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OM3xP1qRNvM?si=bX-ZefKo5v5XchTX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="separator"></div>
+                <div class="column">
+                    <h2>Ecouter sur Spotify</h2>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1l9iNunM0ZShQIoMRG0uGh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Galerie -->
+        <div class="slide">
+            <div class="gallery">
+                <a href="page1.html" target="_blank">
+                    <img src="1.jpg" alt="Volume 1" class="cover-image">
+                </a>
+                <a href="page2.html" target="_blank">
+                    <img src="2.jpg" alt="Volume 2" class="cover-image">
+                </a>
+                <a href="page3.html" target="_blank">
+                    <img src="3.jpg" alt="Volume 3" class="cover-image">
+                </a>
+            </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         @Clem_jouz
     </footer>
 
-<script>
-    // Fonction pour ouvrir le menu latéral
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.style.width = (sidebar.style.width === '250px') ? '0' : '250px';
-    }
+    <script>
+        // Fonction pour ouvrir le menu latéral
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.width = (sidebar.style.width === '250px') ? '0' : '250px';
+        }
 
-    // Fonction pour fermer le menu latéral
-    function closeSidebar() {
-        document.getElementById('sidebar').style.width = '0';
-    }
-</script>
+        // Fonction pour fermer le menu latéral
+        function closeSidebar() {
+            document.getElementById('sidebar').style.width = '0';
+        }
+    </script>
 </body>
 </html>
