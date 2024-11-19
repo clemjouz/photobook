@@ -15,14 +15,16 @@
         <a href="page3.html">Volume 3</a>
     </div>
 
+    <!-- Icône du menu en dehors de la structure des slides -->
+    <div class="menu-icon" onclick="toggleSidebar()" aria-label="Ouvrir le menu">&#9776;</div>
+
     <!-- Conteneur global du diaporama -->
     <div class="slideshow-container">
         <!-- Slide 1: L'entête -->
         <div class="slide">
-            <header>
-                <div class="menu-icon" onclick="toggleSidebar()" aria-label="Ouvrir le menu">&#9776;</div>
+            <div class="header-slide">
                 <h1>Je suis sorti de ma chambre</h1>
-            </header>
+            </div>
         </div>
 
         <!-- Slide 2: Le projet -->
@@ -69,17 +71,6 @@
         @Clem_jouz
     </footer>
 
-    <script>
-        // Fonction pour ouvrir le menu latéral
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.style.width = (sidebar.style.width === '250px') ? '0' : '250px';
-        }
-
-        // Fonction pour fermer le menu latéral
-        function closeSidebar() {
-            document.getElementById('sidebar').style.width = '0';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
