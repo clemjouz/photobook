@@ -1,15 +1,16 @@
 // Fonction pour gérer le défilement entre les slides
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
+const slideshowContainer = document.querySelector('.slideshow-container');
 
 function goToSlide(index) {
     if (index >= 0 && index < slides.length) {
         currentSlide = index;
-        document.querySelector('.slideshow-container').style.transform = `translateY(-${currentSlide * 100}vh)`;
+        slideshowContainer.style.transform = `translateY(-${currentSlide * 100}vh)`;
     }
 }
 
-// Écouteur pour la navigation par clavier
+// Navigation par clavier (flèches haut et bas)
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown') {
         goToSlide(currentSlide + 1);
@@ -17,4 +18,3 @@ document.addEventListener('keydown', (e) => {
         goToSlide(currentSlide - 1);
     }
 });
-
