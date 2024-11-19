@@ -8,62 +8,97 @@ body {
 /* Styles uniformisés pour le header et le footer */
 header, footer {
     text-align: center;
-    padding: 1.5rem; /* Espacement accru pour un look aéré */
-    background-color: #2c3e50; /* Couleur gris foncé */
-    color: #ecf0f1; /* Couleur claire pour le texte */
-    max-width: 1200px; /* Largeur maximale uniforme */
-    margin: 0 auto; /* Centre le header et le footer */
-    width: 100%; /* Largeur complète dans leur conteneur */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce pour donner du relief */
-    border-radius: 8px; /* Coins légèrement arrondis */
+    padding: 1.5rem;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 0;
 }
 
 /* Style du titre dans le header */
 header h1 {
-    font-size: 2.5em; /* Taille de police plus grande */
-    font-weight: 700; /* Gras pour le titre */
-    letter-spacing: 1px; /* Espacement des lettres */
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
     margin: 0;
-    text-transform: uppercase; /* Texte en majuscules */
-    line-height: 1.2; /* Hauteur de ligne ajustée pour une meilleure lisibilité */
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
 /* Style du texte dans le footer */
 footer p {
-    font-size: 0.9em; /* Taille de police légèrement réduite */
+    font-size: 0.9em;
     margin: 0;
-    letter-spacing: 0.5px; /* Espacement des lettres */
-    color: #bdc3c7; /* Couleur gris clair pour le texte */
+    letter-spacing: 0.5px;
+    color: #bdc3c7;
 }
 
 /* Conteneur global pour centrer tout le contenu de la page */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px; /* Espacement autour du contenu */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Nouvelle section "Le projet" */
+.project-section {
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+/* Style du titre "Le projet" */
+.project-section h2 {
+    font-size: 6em;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 3px;
+    color: #2c3e50;
+    line-height: 1.2;
+}
+
+/* Style de la description sous le titre */
+.project-section p {
+    font-size: 1.5em;
+    color: #7f8c8d;
+    margin-top: 20px;
+    line-height: 1.6;
 }
 
 /* Style de la galerie */
 .gallery {
-    display: flex; /* Flexbox pour l'alignement des images */
-    justify-content: center; /* Centre les images horizontalement */
-    gap: 40px; /* Espace entre les images */
-    margin: 20px 0; /* Espace en haut et en bas */
-    padding: 0 20px; /* Espacement latéral */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+    padding: 0 20px;
 }
 
 /* Style des images */
 .cover-image {
-    width: 100%; /* Les images remplissent le conteneur */
-    max-width: 300px; /* Limite la taille pour un bon équilibre */
-    height: auto; /* Maintien des proportions */
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre sous les images */
-    transition: transform 0.3s; /* Transition pour effet de zoom */
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
 }
 
 .cover-image:hover {
-    transform: scale(1.05); /* Zoom léger au survol */
+    transform: scale(1.05);
 }
 
 /* Icône du menu hamburger */
@@ -74,7 +109,7 @@ footer p {
     top: 20px;
     left: 20px;
     z-index: 1000;
-    color: #007BFF; /* Couleur bleu pour l'icône */
+    color: #007BFF;
 }
 
 /* Style du menu latéral */
@@ -84,7 +119,7 @@ footer p {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #34495e; /* Couleur gris foncé pour le menu */
+    background-color: #34495e;
     overflow-x: hidden;
     transition: width 0.3s;
     padding-top: 60px;
@@ -97,13 +132,13 @@ footer p {
     padding: 10px 20px;
     text-decoration: none;
     font-size: 18px;
-    color: #ecf0f1; /* Couleur claire pour les liens */
+    color: #ecf0f1;
     display: block;
     transition: background 0.3s;
 }
 
 #sidebar a:hover {
-    background-color: #2c3e50; /* Couleur foncée au survol */
+    background-color: #2c3e50;
 }
 
 /* Bouton de fermeture */
@@ -114,49 +149,28 @@ footer p {
     right: 20px;
     cursor: pointer;
 }
-/* Conteneur global pour centrer tout le contenu de la page */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px; /* Espacement autour du contenu */
-    height: 100vh; /* Hauteur de la fenêtre de vue */
-    overflow-y: auto; /* Permet de défiler verticalement */
+
+/* Nouvelle section séparée par une barre verticale */
+.split-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Nouvelle section "Le projet" */
-.project-section {
-    background-color: #ecf0f1; /* Fond clair pour se démarquer */
-    border-radius: 8px; /* Coins arrondis */
-    padding: 20px; /* Espacement interne */
-    margin: 20px 0; /* Espace autour de la section */
-    text-align: center; /* Centre le texte */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
-    display: flex; /* Utilise Flexbox pour centrer le contenu */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    flex-direction: column; /* Aligne le contenu verticalement */
-    min-height: 80vh; /* Hauteur minimale pour ne pas trop occuper de place */
+.split-section .column {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
 }
 
-/* Style du titre "Le projet" */
-.project-section h2 {
-    font-size: 6em; /* Taille de police encore plus grande */
-    font-weight: 300; /* Police fine */
-    text-transform: uppercase; /* Texte en majuscules */
-    margin: 0; /* Supprime les marges par défaut */
-    letter-spacing: 3px; /* Espacement des lettres pour plus d'air */
-    color: #2c3e50; /* Couleur sombre pour contraster avec le fond clair */
-    line-height: 1.2; /* Hauteur de ligne pour plus d'espace autour du texte */
-}
-
-/* Style de la description sous le titre */
-.project-section p {
-    font-size: 1.5em; /* Taille de la police pour la description */
-    color: #7f8c8d; /* Couleur de texte plus douce */
-    margin-top: 20px; /* Espacement entre le titre et la description */
-    line-height: 1.6; /* Hauteur de ligne pour rendre le texte aéré */
-}
-
-}
-
+.split-section .separator {
+    width: 2px;
+    background-color: #bdc3c7;
+    height: 80px;
+    margin: 0 20px;
 }
