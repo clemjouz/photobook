@@ -11,8 +11,6 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
-            height: 100%; /* Permet au body d'occuper toute la hauteur */
-            overflow-y: auto; /* Permet le défilement global */
         }
 
         /* Styles uniformisés pour le header et le footer */
@@ -26,6 +24,7 @@
             width: 100%; /* Largeur complète dans leur conteneur */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce pour donner du relief */
             border-radius: 8px; /* Coins légèrement arrondis */
+            position: relative; /* Pour le positionnement des éléments internes */
         }
 
         /* Style du titre dans le header */
@@ -51,6 +50,41 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px; /* Espacement autour du contenu */
+        }
+
+        /* Nouvelle section "Le projet" */
+        .project-section {
+            background-color: #ecf0f1; /* Fond clair pour se démarquer */
+            border-radius: 8px; /* Coins arrondis */
+            padding: 20px; /* Espacement interne */
+            margin: 20px 0; /* Espace autour de la section */
+            text-align: center; /* Centre le texte */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+        }
+
+        /* Nouvelle section avec barre verticale */
+        .split-section {
+            display: flex; /* Utiliser Flexbox pour une mise en page en colonnes */
+            justify-content: space-between; /* Espace entre les colonnes */
+            align-items: center; /* Aligner les éléments au centre verticalement */
+            margin: 20px 0; /* Espace autour de la section */
+            padding: 20px; /* Espacement interne */
+            background-color: #ecf0f1; /* Fond clair pour se démarquer */
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+        }
+
+        .split-section .column {
+            flex: 1; /* Chaque colonne occupe une partie égale */
+            text-align: center; /* Centre le texte dans chaque colonne */
+            padding: 10px; /* Espacement interne des colonnes */
+        }
+
+        .split-section .separator {
+            width: 2px; /* Largeur de la barre de séparation */
+            background-color: #bdc3c7; /* Couleur de la barre de séparation */
+            height: 80px; /* Hauteur de la barre de séparation */
+            margin: 0 20px; /* Espacement autour de la barre */
         }
 
         /* Style de la galerie */
@@ -123,40 +157,7 @@
             top: 20px;
             right: 20px;
             cursor: pointer;
-        }
-
-        /* Nouvelle section "Le projet" */
-        .project-section {
-            background-color: #ecf0f1; /* Fond clair pour se démarquer */
-            border-radius: 8px; /* Coins arrondis */
-            padding: 20px; /* Espacement interne */
-            margin: 20px 0; /* Espace autour de la section */
-            text-align: center; /* Centre le texte */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
-            display: flex; /* Utilise Flexbox pour centrer le contenu */
-            justify-content: center; /* Centre horizontalement */
-            align-items: center; /* Centre verticalement */
-            flex-direction: column; /* Aligne le contenu verticalement */
-            min-height: 80vh; /* Hauteur minimale pour ne pas trop occuper de place */
-        }
-
-        /* Style du titre "Le projet" */
-        .project-section h2 {
-            font-size: 6em; /* Taille de police encore plus grande */
-            font-weight: 300; /* Police fine */
-            text-transform: uppercase; /* Texte en majuscules */
-            margin: 0; /* Supprime les marges par défaut */
-            letter-spacing: 3px; /* Espacement des lettres pour plus d'air */
-            color: #2c3e50; /* Couleur sombre pour contraster avec le fond clair */
-            line-height: 1.2; /* Hauteur de ligne pour plus d'espace autour du texte */
-        }
-
-        /* Style de la description sous le titre */
-        .project-section p {
-            font-size: 1.5em; /* Taille de la police pour la description */
-            color: #7f8c8d; /* Couleur de texte plus douce */
-            margin-top: 20px; /* Espacement entre le titre et la description */
-            line-height: 1.6; /* Hauteur de ligne pour rendre le texte aéré */
+            color: white; /* Couleur pour le bouton de fermeture */
         }
     </style>
 </head>
@@ -176,38 +177,50 @@
         <!-- Nouvelle section "Le projet" -->
         <div class="project-section">
             <h2>Le projet</h2>
-            <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
+          <br>  <p>Ceci est une description du projet. Expliquez ici ce que représente le projet, ses objectifs, et son importance.</p>
         </div>
 
         <!-- Nouvelle section séparée par une barre verticale -->
         <div class="split-section">
             <div class="column">
                 <h2>Retrouvez le livre sur YouTube</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OM3xP1qRNvM?si=bX-ZefKo5v5XchTX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OM3xP1qRNvM?si=bX-ZefKo5v5XchTX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
+            <div class="separator"></div>
+            <div class="column">
+                <h2>Ecouter sur Spotify</h2>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1l9iNunM0ZShQIoMRG0uGh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>            </div>
         </div>
-        
-        <!-- Galerie des images -->
+
         <div class="gallery">
-            <img class="cover-image" src="1.jpg" alt="Image 1">
-            <img class="cover-image" src="2.jpg" alt="Image 2">
-            <img class="cover-image" src="3.jpg" alt="Image 3">
+            <!-- Les images sont maintenant des liens vers leurs pages respectives -->
+            <a href="page1.html" target="_blank">
+                <img src="1.jpg" alt="Volume 1" class="cover-image">
+            </a>
+            <a href="page2.html" target="_blank">
+                <img src="2.jpg" alt="Volume 2" class="cover-image">
+            </a>
+            <a href="page3.html" target="_blank">
+                <img src="3.jpg" alt="Volume 3" class="cover-image">
+            </a>
         </div>
-        
-        <footer>
-            <p>&copy; 2024, Tous droits réservés.</p>
-        </footer>
     </div>
-
-    <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById('sidebar');
-            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+<script>
+    // Fonction pour ouvrir le menu latéral
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.style.width === '250px') {
+            sidebar.style.width = '0';
+        } else {
+            sidebar.style.width = '250px';
         }
+    }
 
-        function closeSidebar() {
-            document.getElementById('sidebar').style.width = '0';
-        }
-    </script>
-</body>
-</html>
+    // Fonction pour fermer le menu latéral
+    function closeSidebar() {
+        document.getElementById('sidebar').style.width = '0';
+    }
+</script>
+
+    <footer>
+        @Clem_jouz
