@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f0f0f0;
     overflow-x: hidden; /* Empêche le défilement horizontal */
+    scroll-behavior: smooth; /* Défilement fluide */
 }
 
 /* Menu latéral */
@@ -43,7 +44,7 @@ body {
     top: 20px;
     left: 20px;
     color: #007BFF;
-    z-index: 1000;
+    z-index: 1000; /* Assure que l'icône est au-dessus de tout */
 }
 
 /* Conteneur des slides */
@@ -60,6 +61,18 @@ body {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Effet pour rendre la slide suivante centrée avec un effet d'apparition */
+.slide {
+    transform: translateY(100vh);
+    opacity: 0;
+}
+
+.slide.show {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /* Style de l'entête de la première slide */
