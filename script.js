@@ -1,20 +1,23 @@
-// Fonction pour gérer le défilement entre les slides
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const slideshowContainer = document.querySelector('.slideshow-container');
+// Fonction pour déplacer l'utilisateur à la slide suivante/précédente
+function scrollSlide(direction) {
+    const slides = document.querySelectorAll('.slide');
+    const currentSlide = Math.floor(window.scrollY / window.innerHeight);
 
-function goToSlide(index) {
-    if (index >= 0 && index < slides.length) {
-        currentSlide = index;
-        slideshowContainer.style.transform = `translateY(-${currentSlide * 100}vh)`;
+    // On empêche de sortir des bornes
+    const nextSlide = currentSlide + direction;
+    if (nextSlide >= 0 && nextSlide < slides.length) {
+        window.scrollTo({
+            top: nextSlide * window.innerHeight,
+            behavior: 'smooth'
+        });
     }
 }
 
-// Navigation par clavier (flèches haut et bas)
+// Ajout des événements pour les touches fléchées
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown') {
-        goToSlide(currentSlide + 1);
+        scrollSlide(1); // Vers la slide suivante
     } else if (e.key === 'ArrowUp') {
-        goToSlide(currentSlide - 1);
+        scrollSlide(-1); // Vers la slide précédente
     }
 });
