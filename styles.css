@@ -1,16 +1,63 @@
 /* Corps de la page */
-html, body {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: auto; /* Garantit que le défilement fonctionne */
+    background-color: #f0f0f0;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
     scroll-behavior: smooth; /* Défilement fluide */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    overscroll-behavior: contain; /* Empêche les décalages non désirés */
+/* Conteneur global des slides */
+.slides-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Remplir l'écran */
+    overflow-y: scroll; /* Permet le défilement vertical */
+    scroll-snap-type: y mandatory; /* Définir les points d'ancrage sur l'axe vertical */
+    -webkit-overflow-scrolling: touch; /* Pour les appareils tactiles */
+}
+
+.slide {
+    height: 100vh; /* Chaque slide prend 100% de la hauteur de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Ancrage au début de chaque slide */
+    padding: 20px;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide:nth-child(1) {
+    background-color: #f8bbd0; /* Rose pâle */
+}
+
+.slide:nth-child(2) {
+    background-color: #e1bee7; /* Violet pâle */
+}
+
+.slide:nth-child(3) {
+    background-color: #bbdefb; /* Bleu pastel */
+}
+
+.slide:nth-child(4) {
+    background-color: #f5f5dc; /* Crème */
+}
+
+/* Galerie */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.cover-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Menu latéral */
@@ -51,118 +98,3 @@ body {
     color: #007BFF;
     z-index: 1000; /* Assure que l'icône est au-dessus de tout */
 }
-
-/* Conteneur des slides */
-.slides-container {
-    display: block; /* Empêche les problèmes d'empilement */
-    overflow: visible;
-}
-
-/* Style pour chaque slide */
-.slide {
-    height: 100vh; /* Chaque slide prend 100% de la hauteur de l'écran */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Couleurs de fond pour chaque slide */
-#slide-1 {
-    background-color: #ffe4e1; /* Rose pâle */
-}
-
-#slide-2 {
-    background-color: #e6e6fa; /* Violet pâle */
-}
-
-#slide-3 {
-    background-color: #add8e6; /* Bleu pastel */
-}
-
-#slide-4 {
-    background-color: #fffdd0; /* Crème */
-}
-
-/* Style de l'entête de la première slide */
-.header-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 3.5em;
-    font-weight: 700;
-    color: #2c3e50;
-}
-
-/* Style de la section projet */
-.project-section {
-    background-color: #ecf0f1;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
-}
-
-/* Galerie */
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-.cover-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Séparateur vertical */
-.split-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.split-section .column {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-}
-
-.split-section .separator {
-    width: 2px;
-    background-color: #bdc3c7;
-    height: 80px;
-    margin: 0 20px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2c3e50;
-    color: #ecf0f1;
-}
-
-/* Fix pour Chrome */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    body {
-        overflow-y: scroll; /* Assure que le défilement vertical est toujours actif */
-    }
-
-    .slide {
-        height: 100vh;
-    }
-}
-
