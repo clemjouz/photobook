@@ -12,7 +12,7 @@ body {
 .slides-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Remplir l'écran */
+    height: 100vh; /* Chaque slide prend la hauteur complète de l'écran */
     overflow-y: scroll; /* Permet le défilement vertical */
     scroll-snap-type: y mandatory; /* Définir les points d'ancrage sur l'axe vertical */
     -webkit-overflow-scrolling: touch; /* Pour les appareils tactiles */
