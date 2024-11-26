@@ -35,16 +35,44 @@ body {
 /* Première slide: L'entête */
 .slide:nth-child(1) {
     background-color: #f8bbd0; /* Rose pâle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Style pour le texte de la première slide */
+/* Conteneur principal de la slide */
 .header-slide {
+    display: flex;
+    justify-content: flex-start; /* Aligner le contenu à gauche */
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Conteneur du texte */
+.text-container {
+    flex: 1;  /* Permet au texte de prendre de l'espace disponible */
+    padding-left: 20px;  /* Décale légèrement le texte vers la droite */
     font-family: 'Abril Fatface', cursive;  /* Appliquer la police Abril Fatface */
     font-size: 3rem;  /* Taille du texte réduite à 3rem */
-    text-align: center;  /* Centrer le texte */
     color: black;  /* Couleur noire pour le texte */
     line-height: 1.2;  /* Espacement entre les lignes */
 }
+
+/* Conteneur de l'image */
+.image-container {
+    flex-shrink: 0;  /* Empêche l'image de rétrécir */
+    margin-left: 20px;  /* Ajoute un peu d'espace entre l'image et le texte */
+}
+
+/* Image */
+.header-image {
+    width: 250px;  /* Taille de l'image (ajustable selon besoin) */
+    height: auto;
+    border-radius: 8px;  /* Bord arrondi */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* Ombre légère */
+}
+
 
 /* Assurer que le texte est bien centré verticalement */
 .slide:nth-child(1) {
