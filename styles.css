@@ -12,7 +12,7 @@ body {
 .slides-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Chaque slide prend 100% de la hauteur de l'écran */
+    height: 100vh; /* Le conteneur prend 100% de la hauteur de la fenêtre */
     overflow-y: auto; /* Permet le défilement vertical */
     scroll-snap-type: y mandatory; /* Définir les points d'ancrage sur l'axe vertical */
     -webkit-overflow-scrolling: touch; /* Pour les appareils tactiles */
@@ -29,6 +29,7 @@ body {
     padding: 20px;
     box-sizing: border-box;
     transition: opacity 0.5s ease-in-out;
+    flex-shrink: 0; /* Empêche la réduction de la taille de la slide */
 }
 
 /* Ajouter un fond coloré spécifique pour chaque slide */
