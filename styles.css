@@ -32,19 +32,40 @@ body {
     flex-shrink: 0; /* Empêche la réduction de la taille de la slide */
 }
 
-/* Ajouter un fond coloré spécifique pour chaque slide */
+/* Première slide: L'entête */
 .slide:nth-child(1) {
     background-color: #f8bbd0; /* Rose pâle */
 }
 
+/* Style pour le texte de la première slide */
+.header-slide {
+    font-family: 'Abril Fatface', cursive;  /* Appliquer la police Abril Fatface */
+    font-size: 4rem;  /* Augmenter la taille du texte */
+    text-align: center;  /* Centrer le texte */
+    color: #34495e;  /* Une couleur de texte sombre pour contraster avec le fond rose */
+    line-height: 1.2;  /* Espacement entre les lignes */
+}
+
+/* Assurer que le texte est bien centré verticalement */
+.slide:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    text-align: center;
+}
+
+/* Slide 2: Le projet */
 .slide:nth-child(2) {
     background-color: #e1bee7; /* Violet pâle */
 }
 
+/* Slide 3: Vidéos */
 .slide:nth-child(3) {
     background-color: #bbdefb; /* Bleu pastel */
 }
 
+/* Slide 4: Galerie */
 .slide:nth-child(4) {
     background-color: #f5f5dc; /* Crème */
 }
@@ -101,25 +122,4 @@ body {
     left: 20px;
     color: #007BFF;
     z-index: 1000; /* Assure que l'icône est au-dessus de tout */
-}
-/* Première slide: L'entête */
-.slide:nth-child(1) {
-    background-color: #f8bbd0; /* Rose pâle */
-}
-
-.header-slide {
-    font-family: 'Abril Fatface', cursive;  /* Appliquer la police Abril Fatface */
-    font-size: 4rem;  /* Augmenter la taille du texte */
-    text-align: center;  /* Centrer le texte */
-    color: #34495e;  /* Une couleur de texte sombre pour contraster avec le fond rose */
-    line-height: 1.2;  /* Espacement entre les lignes */
-}
-
-/* Assurer que le texte est bien centré verticalement */
-.slide:nth-child(1) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Prend toute la hauteur de l'écran */
-    text-align: center;
 }
