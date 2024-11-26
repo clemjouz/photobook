@@ -1,11 +1,16 @@
 /* Corps de la page */
-body {
-    font-family: Arial, sans-serif;
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
+    height: 100%;
+    overflow: auto; /* Garantit que le défilement fonctionne */
     scroll-behavior: smooth; /* Défilement fluide */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overscroll-behavior: contain; /* Empêche les décalages non désirés */
 }
 
 /* Menu latéral */
@@ -49,7 +54,8 @@ body {
 
 /* Conteneur des slides */
 .slides-container {
-    display: block; /* Permet un empilement vertical */
+    display: block; /* Empêche les problèmes d'empilement */
+    overflow: visible;
 }
 
 /* Style pour chaque slide */
@@ -148,3 +154,15 @@ footer {
     background-color: #2c3e50;
     color: #ecf0f1;
 }
+
+/* Fix pour Chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    body {
+        overflow-y: scroll; /* Assure que le défilement vertical est toujours actif */
+    }
+
+    .slide {
+        height: 100vh;
+    }
+}
+
