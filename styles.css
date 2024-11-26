@@ -49,8 +49,8 @@ body {
 
 /* Conteneur des slides */
 .slides-container {
-    display: flex;
-    flex-direction: column;
+    display: block; /* Correction pour l'empilement vertical */
+    position: relative;
 }
 
 /* Chaque slide prend 100% de la hauteur de la fenêtre */
@@ -61,18 +61,12 @@ body {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Effet pour rendre la slide suivante centrée avec un effet d'apparition */
-.slide {
-    transform: translateY(100vh);
-    opacity: 0;
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 0.5s ease-in-out;
 }
 
 .slide.show {
-    transform: translateY(0);
-    opacity: 1;
+    opacity: 1; /* Slide visible */
 }
 
 /* Style de l'entête de la première slide */
