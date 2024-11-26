@@ -40,9 +40,9 @@ body {
 /* Style pour le texte de la première slide */
 .header-slide {
     font-family: 'Abril Fatface', cursive;  /* Appliquer la police Abril Fatface */
-    font-size: 4rem;  /* Augmenter la taille du texte */
+    font-size: 3rem;  /* Taille du texte réduite à 3rem */
     text-align: center;  /* Centrer le texte */
-    color: #34495e;  /* Une couleur de texte sombre pour contraster avec le fond rose */
+    color: black;  /* Couleur noire pour le texte */
     line-height: 1.2;  /* Espacement entre les lignes */
 }
 
