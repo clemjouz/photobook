@@ -24,12 +24,15 @@ function scrollSlide(direction) {
     }
 }
 
-// Événements pour les touches fléchées
+// Gestion du défilement avec les touches fléchées (flèche haut et flèche bas)
 document.addEventListener('keydown', function(event) {
+    // Si la flèche bas est pressée, défile vers la slide suivante
     if (event.key === 'ArrowDown') {
-        scrollSlide(1); // Descend à la slide suivante
-    } else if (event.key === 'ArrowUp') {
-        scrollSlide(-1); // Remonte à la slide précédente
+        scrollSlide(1); // Descend d'une slide
+    }
+    // Si la flèche haut est pressée, défile vers la slide précédente
+    else if (event.key === 'ArrowUp') {
+        scrollSlide(-1); // Monte d'une slide
     }
 });
 
