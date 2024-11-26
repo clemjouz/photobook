@@ -25,8 +25,8 @@ function scrollSlide(direction) {
     }
 }
 
-// Gestion du défilement avec les touches fléchées (flèche haut et flèche bas)
-document.addEventListener('keydown', function(event) {
+// Fonction pour gérer l'événement de pression des touches fléchées
+function handleKeyDown(event) {
     // Si la flèche bas est pressée, défile vers la slide suivante
     if (event.key === 'ArrowDown') {
         event.preventDefault();  // Empêche le défilement de la page
@@ -37,7 +37,22 @@ document.addEventListener('keydown', function(event) {
         event.preventDefault();  // Empêche le défilement de la page
         scrollSlide(-1); // Monte d'une slide
     }
-});
+}
+
+// Ajout des événements pour les flèches
+document.addEventListener('keydown', handleKeyDown);
+
+// Ajout des événements pour le défilement avec la molette de la souris
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        // Si la molette défile vers le bas, on descend à la slide suivante
+        scrollSlide(1);
+    } else if (event.deltaY < 0) {
+        // Si la molette défile vers le haut, on monte à la slide précédente
+        scrollSlide(-1);
+    }
+    event.preventDefault();  // Empêche le défilement par défaut
+}, { passive: false });
 
 // Corrige les problèmes de rendu sur Chrome
 window.addEventListener('resize', function () {
