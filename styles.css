@@ -62,6 +62,23 @@ body {
     box-sizing: border-box;
 }
 
+/* Couleurs de fond pour chaque slide */
+#slide-1 {
+    background-color: #ffe4e1; /* Rose pâle */
+}
+
+#slide-2 {
+    background-color: #e6e6fa; /* Violet pâle */
+}
+
+#slide-3 {
+    background-color: #add8e6; /* Bleu pastel */
+}
+
+#slide-4 {
+    background-color: #fffdd0; /* Crème */
+}
+
 /* Style de l'entête de la première slide */
 .header-slide {
     display: flex;
