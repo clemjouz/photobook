@@ -28,13 +28,27 @@ function scrollSlide(direction) {
 document.addEventListener('keydown', function(event) {
     // Si la flèche bas est pressée, défile vers la slide suivante
     if (event.key === 'ArrowDown') {
+        event.preventDefault();  // Empêche le défilement de la page
         scrollSlide(1); // Descend d'une slide
     }
     // Si la flèche haut est pressée, défile vers la slide précédente
     else if (event.key === 'ArrowUp') {
+        event.preventDefault();  // Empêche le défilement de la page
         scrollSlide(-1); // Monte d'une slide
     }
 });
+
+// Empêcher le défilement par la molette de la souris
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        // Si la molette défile vers le bas
+        scrollSlide(1);
+    } else if (event.deltaY < 0) {
+        // Si la molette défile vers le haut
+        scrollSlide(-1);
+    }
+    event.preventDefault();  // Empêche le défilement de la page
+}, { passive: false });
 
 // Corrige les problèmes de rendu sur Chrome
 window.addEventListener('resize', function () {
