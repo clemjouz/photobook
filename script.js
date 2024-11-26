@@ -9,31 +9,25 @@ function closeSidebar() {
     document.getElementById('sidebar').style.width = '0';
 }
 
-// Fonction pour gérer le défilement entre les slides
-function scrollSlide(direction) {
+// Fonction pour naviguer entre les slides avec le clavier
+function scrollToSlide(index) {
     const slides = document.querySelectorAll('.slide');
-    const currentSlide = Math.round(window.scrollY / window.innerHeight);
-    const nextSlide = currentSlide + direction;
-
-    // On empêche de sortir des bornes
-    if (nextSlide >= 0 && nextSlide < slides.length) {
+    if (index >= 0 && index < slides.length) {
+        const target = slides[index];
         window.scrollTo({
-            top: nextSlide * window.innerHeight,
-            behavior: 'smooth'
+            top: target.offsetTop,
+            behavior: 'smooth',
         });
     }
 }
 
-// Activer l'animation lors du chargement des slides
-document.addEventListener('DOMContentLoaded', function () {
-    // Aucune animation nécessaire, toutes les slides sont empilées verticalement.
-});
-
-// Ajouter les événements pour les touches fléchées
-document.addEventListener('keydown', function(event) {
+// Détection des flèches du clavier
+document.addEventListener('keydown', (event) => {
+    const slides = document.querySelectorAll('.slide');
+    const currentIndex = Math.round(window.scrollY / window.innerHeight);
     if (event.key === "ArrowDown") {
-        scrollSlide(1); // Descendre d'une slide
+        scrollToSlide(currentIndex + 1);
     } else if (event.key === "ArrowUp") {
-        scrollSlide(-1); // Monter d'une slide
+        scrollToSlide(currentIndex - 1);
     }
 });
