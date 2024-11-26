@@ -49,11 +49,10 @@ body {
 
 /* Conteneur des slides */
 .slides-container {
-    display: block; /* Correction pour l'empilement vertical */
-    position: relative;
+    display: block; /* Permet un empilement vertical */
 }
 
-/* Chaque slide prend 100% de la hauteur de la fenêtre */
+/* Style pour chaque slide */
 .slide {
     height: 100vh; /* Chaque slide prend 100% de la hauteur de l'écran */
     display: flex;
@@ -61,12 +60,6 @@ body {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    opacity: 0; /* Caché par défaut */
-    transition: opacity 0.5s ease-in-out;
-}
-
-.slide.show {
-    opacity: 1; /* Slide visible */
 }
 
 /* Style de l'entête de la première slide */
