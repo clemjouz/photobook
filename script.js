@@ -41,12 +41,33 @@ document.addEventListener('keydown', handleKeyDown);
 
 // Gestion de la molette de la souris pour le défilement entre les slides
 document.addEventListener('wheel', function(event) {
+    event.preventDefault();  // Empêche le défilement par défaut de la page
     if (event.deltaY > 0) {
         scrollSlide(1); // Molette vers le bas (on descend à la slide suivante)
     } else if (event.deltaY < 0) {
         scrollSlide(-1); // Molette vers le haut (on monte à la slide précédente)
     }
-    event.preventDefault();  // Empêche le défilement par défaut de la page
+}, { passive: false });
+
+// Empêcher le comportement par défaut du défilement tactile sur les appareils mobiles (pad tactile)
+let touchStartY = 0;
+document.addEventListener('touchstart', (e) => {
+    touchStartY = e.changedTouches[0].screenY;  // Sauvegarde la position initiale
+});
+
+document.addEventListener('touchmove', (e) => {
+    const touchEndY = e.changedTouches[0].screenY;
+    const deltaY = touchStartY - touchEndY;
+
+    if (Math.abs(deltaY) > 30) { // Seuil de déplacement pour le défilement
+        e.preventDefault(); // Empêche le défilement classique
+        if (deltaY > 0) {
+            scrollSlide(1); // Défile vers la slide suivante
+        } else {
+            scrollSlide(-1); // Défile vers la slide précédente
+        }
+        touchStartY = touchEndY;  // Met à jour la position de départ
+    }
 }, { passive: false });
 
 // Gestion du redimensionnement de la fenêtre
