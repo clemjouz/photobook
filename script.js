@@ -12,7 +12,7 @@ function closeSidebar() {
 // Fonction pour gérer le défilement rapide entre les slides
 function scrollSlide(direction) {
     const slides = document.querySelectorAll('.slide');
-    const currentSlide = Math.floor(window.scrollY / window.innerHeight);
+    const currentSlide = Math.floor(window.scrollY / window.innerHeight); // Calcul de la slide actuelle
     const nextSlide = currentSlide + direction;
 
     // On empêche de sortir des bornes
@@ -27,45 +27,40 @@ function scrollSlide(direction) {
 
 // Fonction pour gérer l'événement de pression des touches fléchées
 function handleKeyDown(event) {
-    // Si la flèche bas est pressée, défile vers la slide suivante
     if (event.key === 'ArrowDown') {
         event.preventDefault();  // Empêche le défilement de la page
         scrollSlide(1); // Descend d'une slide
-    }
-    // Si la flèche haut est pressée, défile vers la slide précédente
-    else if (event.key === 'ArrowUp') {
+    } else if (event.key === 'ArrowUp') {
         event.preventDefault();  // Empêche le défilement de la page
         scrollSlide(-1); // Monte d'une slide
     }
 }
 
-// Ajout des événements pour les flèches
+// Ajouter un gestionnaire d'événements pour les touches fléchées
 document.addEventListener('keydown', handleKeyDown);
 
-// Ajout des événements pour le défilement avec la molette de la souris
+// Ajouter des événements pour la molette de la souris (rouler vers le bas ou vers le haut)
 document.addEventListener('wheel', function(event) {
     if (event.deltaY > 0) {
-        // Si la molette défile vers le bas, on descend à la slide suivante
-        scrollSlide(1);
+        scrollSlide(1); // Molette vers le bas (on descend à la slide suivante)
     } else if (event.deltaY < 0) {
-        // Si la molette défile vers le haut, on monte à la slide précédente
-        scrollSlide(-1);
+        scrollSlide(-1); // Molette vers le haut (on monte à la slide précédente)
     }
-    event.preventDefault();  // Empêche le défilement par défaut
-}, { passive: false });
+    event.preventDefault();  // Empêche le défilement de la page
+}, { passive: false }); // Empêche la propagation passive
 
-// Corrige les problèmes de rendu sur Chrome
-window.addEventListener('resize', function () {
+// Correction pour ajuster la hauteur des slides lors du redimensionnement de la fenêtre
+window.addEventListener('resize', function() {
     const slides = document.querySelectorAll('.slide');
     slides.forEach(slide => {
-        slide.style.height = window.innerHeight + 'px'; // Ajuste la hauteur en fonction de l'écran
+        slide.style.height = window.innerHeight + 'px'; // Définit la hauteur de chaque slide
     });
 });
 
-// Initialiser les hauteurs au chargement
-document.addEventListener('DOMContentLoaded', () => {
+// Initialisation des slides au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slide');
     slides.forEach(slide => {
-        slide.style.height = window.innerHeight + 'px'; // Définit la hauteur initiale
+        slide.style.height = window.innerHeight + 'px'; // Définit la hauteur de chaque slide
     });
 });
