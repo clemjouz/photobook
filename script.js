@@ -23,7 +23,13 @@ function scrollSlide(direction) {
         });
 
         // Ajouter la classe 'show' pour l'animation d'apparition
-        slides[nextSlide].classList.add('show');
+        slides.forEach((slide, index) => {
+            if (index === nextSlide) {
+                slide.classList.add('show');
+            } else {
+                slide.classList.remove('show');
+            }
+        });
     }
 }
 
