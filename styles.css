@@ -52,7 +52,7 @@ body {
 /* Conteneur du texte */
 .text-container {
     flex: 1;
-    text-align: right;
+    text-align: left;  /* Aligne le texte à gauche */
     font-family: 'Abril Fatface', cursive; /* Police Abril Fatface */
     font-size: 3rem;
     color: black;
@@ -63,7 +63,7 @@ body {
 /* Conteneur de l'image */
 .image-container {
     flex-shrink: 0; /* Empêche l'image de rétrécir */
-    margin-left: 20px; /* Ajoute un peu d'espace entre l'image et le texte */
+    margin-right: 20px; /* Ajoute un peu d'espace entre l'image et le texte */
 }
 
 /* Image */
@@ -87,9 +87,43 @@ body {
     background-color: #e1bee7; /* Violet pâle */
 }
 
+.project-section {
+    text-align: center;
+    padding-top: 30vh; /* Centrer verticalement le titre */
+}
+
+.project-section h2 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 4rem;
+    color: black;
+}
+
+.project-section p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #333;
+}
+
 /* Slide 3: Vidéos */
 .slide:nth-child(3) {
     background-color: #bbdefb; /* Bleu pastel */
+}
+
+.split-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.column {
+    width: 48%; /* Assure que les deux colonnes prennent la moitié de la largeur */
+}
+
+.separator {
+    height: 1px;
+    background-color: #333;
+    margin: 20px 0;
 }
 
 /* Slide 4: Galerie */
@@ -97,7 +131,6 @@ body {
     background-color: #f5f5dc; /* Crème */
 }
 
-/* Galerie */
 .gallery {
     display: flex;
     justify-content: center;
