@@ -42,7 +42,6 @@ body {
 
 .header-slide {
     display: flex;
-    justify-content: space-between; /* Texte à gauche, image à droite */
     align-items: center;
     width: 100%;
     padding: 20px;
