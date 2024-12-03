@@ -4,101 +4,107 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
-    scroll-behavior: smooth; /* Défilement fluide */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Conteneur global des slides */
 .slides-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Le conteneur prend 100% de la hauteur de la fenêtre */
-    overflow-y: auto; /* Permet le défilement vertical */
-    scroll-snap-type: y mandatory; /* Définir les points d'ancrage sur l'axe vertical */
-    -webkit-overflow-scrolling: touch; /* Pour les appareils tactiles */
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
     position: relative;
 }
 
-/* Chaque slide prend 100% de la hauteur de l'écran */
 .slide {
-    height: 100vh; /* Chaque slide prend la hauteur complète de l'écran */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start; /* Ancrage au début de chaque slide */
+    scroll-snap-align: start;
     padding: 20px;
     box-sizing: border-box;
-    transition: opacity 0.5s ease-in-out;
-    flex-shrink: 0; /* Empêche la réduction de la taille de la slide */
+    flex-shrink: 0;
 }
 
-/* Première slide: L'entête */
-.slide:nth-child(1) {
-    background-color: #f8bbd0; /* Rose pâle */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Conteneur principal de la slide */
+/* Slide 1 */
 .header-slide {
     display: flex;
-    justify-content: flex-start; /* Aligner le contenu à gauche */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 20px;
 }
 
-/* Conteneur du texte */
 .text-container {
-    flex: 1;  /* Permet au texte de prendre de l'espace disponible */
-    padding-left: 20px;  /* Décale légèrement le texte vers la droite */
-    font-family: 'Abril Fatface', cursive;  /* Appliquer la police Abril Fatface */
-    font-size: 3rem;  /* Taille du texte réduite à 3rem */
-    color: black;  /* Couleur noire pour le texte */
-    line-height: 1.2;  /* Espacement entre les lignes */
+    flex: 1;
+    padding-right: 20px;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem;
+    color: black;
+    line-height: 1.2;
+    text-align: right;
 }
 
-/* Conteneur de l'image */
+.text-container span {
+    display: block;
+}
+
 .image-container {
-    flex-shrink: 0;  /* Empêche l'image de rétrécir */
-    margin-left: 20px;  /* Ajoute un peu d'espace entre l'image et le texte */
+    flex-shrink: 0;
 }
 
-/* Image */
 .header-image {
-    width: 250px;  /* Taille de l'image (ajustable selon besoin) */
+    width: 300px;
     height: auto;
-    border-radius: 8px;  /* Bord arrondi */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* Ombre légère */
+    border-radius: 8px;
 }
 
-
-/* Assurer que le texte est bien centré verticalement */
-.slide:nth-child(1) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Prend toute la hauteur de l'écran */
+/* Slide 2 */
+.slide:nth-child(2) {
+    background-color: #e1bee7;
     text-align: center;
 }
 
-/* Slide 2: Le projet */
-.slide:nth-child(2) {
-    background-color: #e1bee7; /* Violet pâle */
+.project-section {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
 }
 
-/* Slide 3: Vidéos */
+.project-section h2 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2.5rem;
+}
+
+/* Slide 3 */
 .slide:nth-child(3) {
-    background-color: #bbdefb; /* Bleu pastel */
+    background-color: #bbdefb;
+    text-align: center;
+    padding: 40px;
 }
 
-/* Slide 4: Galerie */
+.split-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.separator {
+    width: 2px;
+    height: 100%;
+    background-color: #333;
+}
+
+/* Slide 4 */
 .slide:nth-child(4) {
-    background-color: #f5f5dc; /* Crème */
+    background-color: #f5f5dc;
+    text-align: center;
 }
 
-/* Galerie */
 .gallery {
     display: flex;
     justify-content: center;
@@ -106,7 +112,6 @@ body {
 }
 
 .cover-image {
-    width: 100%;
     max-width: 300px;
     height: auto;
     border-radius: 8px;
@@ -124,7 +129,6 @@ body {
     overflow-x: hidden;
     transition: width 0.3s;
     padding-top: 60px;
-    color: white;
     z-index: 999;
 }
 
@@ -134,20 +138,14 @@ body {
     font-size: 18px;
     color: #ecf0f1;
     display: block;
-    transition: background 0.3s;
 }
 
-#sidebar a:hover {
-    background-color: #2c3e50;
-}
-
-/* Icône du menu */
 .menu-icon {
     font-size: 30px;
     cursor: pointer;
-    position: fixed; /* Fixe l'icône sur l'écran */
+    position: fixed;
     top: 20px;
     left: 20px;
     color: #007BFF;
-    z-index: 1000; /* Assure que l'icône est au-dessus de tout */
+    z-index: 1000;
 }
