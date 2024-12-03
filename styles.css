@@ -4,36 +4,45 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    overflow: hidden; /* Empêche le défilement de la page */
+    scroll-behavior: smooth; /* Défilement fluide */
 }
 
 /* Conteneur global des slides */
 .slides-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    -webkit-overflow-scrolling: touch;
+    height: 100vh; /* Le conteneur prend 100% de la hauteur de la fenêtre */
+    overflow-y: auto; /* Permet le défilement vertical */
+    scroll-snap-type: y mandatory; /* Définir les points d'ancrage sur l'axe vertical */
+    -webkit-overflow-scrolling: touch; /* Pour les appareils tactiles */
     position: relative;
 }
 
+/* Chaque slide prend 100% de la hauteur de l'écran */
 .slide {
-    height: 100vh;
+    height: 100vh; /* Chaque slide prend la hauteur complète de l'écran */
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
+    scroll-snap-align: start; /* Ancrage au début de chaque slide */
     padding: 20px;
     box-sizing: border-box;
-    flex-shrink: 0;
+    transition: opacity 0.5s ease-in-out;
+    flex-shrink: 0; /* Empêche la réduction de la taille de la slide */
 }
 
-/* Slide 1 */
+/* Première slide: L'entête */
+.slide:nth-child(1) {
+    background-color: #f8bbd0; /* Rose pâle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header-slide {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Texte à gauche, image à droite */
     align-items: center;
     width: 100%;
     padding: 20px;
@@ -41,70 +50,77 @@ body {
 
 .text-container {
     flex: 1;
-    padding-right: 20px;
+    text-align: right;
     font-family: 'Abril Fatface', cursive;
     font-size: 3rem;
     color: black;
     line-height: 1.2;
-    text-align: right;
-}
-
-.text-container span {
-    display: block;
-}
-
-.image-container {
-    flex-shrink: 0;
 }
 
 .header-image {
-    width: 300px;
+    width: 300px; /* Agrandissement de l'image */
     height: auto;
     border-radius: 8px;
+    /* Suppression de l'ombre */
 }
 
-/* Slide 2 */
+/* Slide 2: Le projet */
 .slide:nth-child(2) {
-    background-color: #e1bee7;
-    text-align: center;
-}
-
-.project-section {
-    width: 100%;
-    text-align: center;
-    margin-top: 10%;
+    background-color: #e1bee7; /* Violet pâle */
 }
 
 .project-section h2 {
     font-family: 'Abril Fatface', cursive;
-    font-size: 2.5rem;
+    font-size: 4rem; /* Agrandir le titre */
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-section p {
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 /* Slide 3 */
 .slide:nth-child(3) {
+    position: relative;
     background-color: #bbdefb;
-    text-align: center;
-    padding: 40px;
 }
 
-.split-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.slide:nth-child(3) h2 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem;
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
 .separator {
     width: 2px;
-    height: 100%;
-    background-color: #333;
+    height: 80%;
+    background-color: black;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Slide 4 */
 .slide:nth-child(4) {
+    position: relative;
     background-color: #f5f5dc;
-    text-align: center;
 }
 
+.slide:nth-child(4) h2 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/* Galerie */
 .gallery {
     display: flex;
     justify-content: center;
@@ -112,6 +128,7 @@ body {
 }
 
 .cover-image {
+    width: 100%;
     max-width: 300px;
     height: auto;
     border-radius: 8px;
@@ -129,6 +146,7 @@ body {
     overflow-x: hidden;
     transition: width 0.3s;
     padding-top: 60px;
+    color: white;
     z-index: 999;
 }
 
@@ -138,8 +156,14 @@ body {
     font-size: 18px;
     color: #ecf0f1;
     display: block;
+    transition: background 0.3s;
 }
 
+#sidebar a:hover {
+    background-color: #2c3e50;
+}
+
+/* Icône du menu */
 .menu-icon {
     font-size: 30px;
     cursor: pointer;
