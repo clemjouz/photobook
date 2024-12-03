@@ -19,19 +19,6 @@ body {
     position: relative;
 }
 
-/* Chaque slide prend 100% de la hauteur de l'écran */
-.slide {
-    height: 100vh; /* Chaque slide prend la hauteur complète de l'écran */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start; /* Ancrage au début de chaque slide */
-    padding: 20px;
-    box-sizing: border-box;
-    transition: opacity 0.5s ease-in-out;
-    flex-shrink: 0; /* Empêche la réduction de la taille de la slide */
-}
-
 /* Slide 1: L'entête */
 .slide:nth-child(1) {
     background-color: #f8bbd0; /* Rose pâle */
@@ -61,12 +48,25 @@ body {
     flex-shrink: 0; /* Empêche l'image de rétrécir */
 }
 
-/* Image */
-.header-image {
+/* Image spécifique à la slide 1 */
+.slide-1-image {
     width: 500px; /* Taille agrandie de l'image */
     height: auto;
     border-radius: 8px; /* Bord arrondi */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
 
-/* Autres styles restent inchangés... */
+/* Galerie (aucune modification) */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.cover-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
