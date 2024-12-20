@@ -109,7 +109,7 @@ body {
 
 .separator {
     width: 2px;
-    height: 80%; /* La barre séparatrice prend 80% de la hauteur de la section */
+    height: 70%; /* La barre séparatrice prend 80% de la hauteur de la section */
     background-color: black;
     position: absolute;
     top: 10%;
