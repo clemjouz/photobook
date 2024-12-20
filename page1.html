@@ -15,6 +15,7 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
+            overflow-y: auto; /* Scroll activé */
         }
 
         /* En-tête de la page */
@@ -22,19 +23,19 @@
             background-color: #34495e;
             color: #ecf0f1;
             text-align: center;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             position: relative;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin: 0;
         }
 
-        .back-button {
+        .return-home {
             position: absolute;
             top: 20px;
-            left: 20px;
+            right: 20px;
             background-color: #ecf0f1;
             color: #34495e;
             border: none;
@@ -45,41 +46,82 @@
             transition: all 0.3s ease;
         }
 
-        .back-button:hover {
+        .return-home:hover {
             background-color: #bdc3c7;
         }
 
-        /* Section de présentation du volume */
+        /* Section principale */
         section {
+            display: flex;
             padding: 4rem 2rem;
-            text-align: center;
+            align-items: center;
+            justify-content: center;
         }
 
-        section h2 {
-            font-size: 2.5rem;
-            color: #34495e;
-            margin-bottom: 1rem;
+        /* Couverture (image de gauche) */
+        .cover-container {
+            width: 45%;
+            padding-right: 20px;
         }
 
-        section p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-        }
-
-        section img {
+        .cover-container img {
             width: 100%;
-            max-width: 600px;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        section img:hover {
+        .cover-container img:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Carrousel (à droite) */
+        .carousel-container {
+            width: 50%;
+            position: relative;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-button {
+            background-color: #34495e;
+            color: #ecf0f1;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-button:hover {
+            background-color: #2c3e50;
         }
 
         /* Pied de page */
@@ -95,66 +137,55 @@
             margin: 0;
         }
 
-        /* Bouton retour en haut */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            font-size: 1.2rem;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .back-to-top:hover {
-            background-color: #0056b3;
-        }
-
-        /* Pour rendre le site responsive */
+        /* Pour rendre la page responsive */
         @media (max-width: 768px) {
+            section {
+                flex-direction: column;
+            }
+
+            .cover-container, .carousel-container {
+                width: 100%;
+                padding-right: 0;
+            }
+
             header h1 {
                 font-size: 2rem;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            section p {
-                font-size: 1rem;
-            }
-
-            .back-button {
-                font-size: 0.9rem;
-                padding: 8px 16px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Bouton de retour -->
-    <button class="back-button" onclick="window.location.href='index.html'">&larr; Retour</button>
+    <!-- Bouton retour à l'accueil -->
+    <button class="return-home" onclick="window.location.href='index.html'">Retour à l'accueil</button>
 
     <!-- En-tête -->
     <header>
         <h1>Volume 1</h1>
     </header>
 
-    <!-- Présentation du volume -->
+    <!-- Contenu principal -->
     <section>
-        <h2>Présentation du Volume 1</h2>
-        <p>Découvrez le premier volume de "Je suis sorti de ma chambre", une collection de souvenirs visuels qui racontent une histoire unique et personnelle. Chaque image témoigne d'un moment clé du voyage créatif de l'auteur.</p>
-        <img src="1.jpg" alt="Volume 1 - Image de couverture">
-    </section>
+        <!-- Couverture (image) -->
+        <div class="cover-container">
+            <img src="1.jpg" alt="Couverture du Volume 1">
+        </div>
 
-    <!-- Bouton de retour en haut -->
-    <button class="back-to-top" onclick="scrollToTop()">&#8593;</button>
+        <!-- Carrousel -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="1.jpg" class="active" alt="Image 1">
+                <img src="2.jpg" alt="Image 2">
+                <img src="3.jpg" alt="Image 3">
+                <img src="4.jpg" alt="Image 4">
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-button" id="prev">&#10094;</button>
+                <button class="carousel-button" id="next">&#10095;</button>
+            </div>
+        </div>
+    </section>
 
     <!-- Pied de page -->
     <footer>
@@ -162,10 +193,30 @@
     </footer>
 
     <script>
-        // Fonction de retour en haut
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Carrousel
+        const images = document.querySelectorAll('.carousel img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
         }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        nextButton.addEventListener('click', nextImage);
+        prevButton.addEventListener('click', prevImage);
     </script>
 
 </body>
