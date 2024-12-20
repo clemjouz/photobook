@@ -30,7 +30,6 @@
                 <div class="text-container">
                     <h1>Je suis sorti de ma <br><span>chambre</span></h1>
                 </div>
-               
             </div>
         </div>
 
@@ -73,11 +72,20 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        @Clem_jouz
-    </footer>
+    <!-- Script pour l'ouverture/fermeture du menu -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
 
-    <script src="script.js" defer></script>
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+    </script>
 </body>
 </html>
