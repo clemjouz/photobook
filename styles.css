@@ -30,63 +30,18 @@ body {
     flex-shrink: 0;
 }
 
-.slide:nth-child(1) {
-    background-color: #f8bbd0;
-}
-
-.header-slide {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-}
-
-.text-container {
-    flex: 1;
-    text-align: right;
-    font-family: 'Abril Fatface', cursive;
-    font-size: 3rem;
-    color: black;
-    line-height: 1.2;
-}
-
-.header-image {
-    width: 500px;
-    height: auto;
-    border-radius: 8px;
-}
-
 .slide:nth-child(2) {
     background-color: #e1bee7;
 }
 
-.project-section h2 {
+.project-section h2, 
+.slide:nth-child(3) h2, 
+.slide:nth-child(4) h2 {
     font-family: 'Abril Fatface', cursive;
-    font-size: 4rem;
-    text-align: center;
-}
-
-.project-section p {
-    text-align: justify;
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.highlight-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.highlight-link:hover {
-    color: #cccccc;
-    text-decoration: underline;
-}
-
-.slide:nth-child(3) {
-    background-color: #bbdefb;
+    font-size: 3rem;
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
 .split-section {
@@ -111,11 +66,6 @@ body {
     transform: translateX(-50%);
 }
 
-iframe {
-    width: 100%;
-    border-radius: 12px;
-}
-
 .slide:nth-child(4) {
     background-color: #f5f5dc;
 }
@@ -134,27 +84,20 @@ iframe {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-#sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #34495e;
-    transition: width 0.3s;
+.project-section p {
+    text-align: justify;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-#sidebar a {
-    color: #ecf0f1;
-    display: block;
+.highlight-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    color: #007BFF;
-    z-index: 1000;
+.highlight-link:hover {
+    color: #cccccc;
+    text-decoration: underline;
 }
