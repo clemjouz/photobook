@@ -8,7 +8,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Conteneur global des slides */
 .slides-container {
     display: flex;
     flex-direction: column;
@@ -68,19 +67,21 @@ body {
 }
 
 .project-section p {
-    text-align: center;
+    text-align: justify;
     font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .highlight-link {
-    color: #007BFF;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .highlight-link:hover {
-    color: #0056b3;
+    color: #cccccc;
     text-decoration: underline;
 }
 
