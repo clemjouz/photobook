@@ -1,13 +1,36 @@
-/* Corps de la page */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    overflow: hidden;
-    scroll-behavior: smooth;
+/* Style pour les titres de slide 3 et 4 */
+#slide-3 h2, 
+#slide-4 h2 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem;
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
+/* Style pour la barre de séparation (slide 3 uniquement) */
+#slide-3 .split-section {
+    position: relative;
+}
+
+#slide-3 .separator {
+    width: 2px;
+    height: 80%;
+    background-color: black;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Style des liens cliquables dans le texte du projet */
+.clickable-link {
+    color: white; 
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Autres styles de base déjà présents */
 .slides-container {
     display: flex;
     flex-direction: column;
@@ -26,25 +49,10 @@ body {
     scroll-snap-align: start;
     padding: 20px;
     box-sizing: border-box;
-    transition: opacity 0.5s ease-in-out;
     flex-shrink: 0;
 }
 
-.slide:nth-child(2) {
-    background-color: #e1bee7;
-}
-
-.project-section h2, 
-.slide:nth-child(3) h2, 
-.slide:nth-child(4) h2 {
-    font-family: 'Abril Fatface', cursive;
-    font-size: 3rem;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-}
-
-.split-section {
+#slide-3 .split-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,52 +60,15 @@ body {
     height: 80%;
 }
 
-.column {
+#slide-3 .column {
     width: 48%;
 }
 
-.separator {
-    width: 2px;
-    height: 80%;
-    background-color: black;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.slide:nth-child(4) {
-    background-color: #f5f5dc;
-}
-
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-.cover-image {
+iframe {
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
 }
 
-.project-section p {
-    text-align: justify;
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.highlight-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.highlight-link:hover {
-    color: #cccccc;
-    text-decoration: underline;
+.clickable-link:hover {
+    color: #f0f0f0;
 }
