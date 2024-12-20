@@ -107,9 +107,17 @@ body {
     width: 48%; /* Chaque colonne occupe environ 48% de la largeur */
 }
 
+.left-column {
+    order: 1; /* La vidéo YouTube sera à gauche */
+}
+
+.right-column {
+    order: 2; /* Le fichier Spotify sera à droite */
+}
+
 .separator {
     width: 2px;
-    height: 70%; /* La barre séparatrice prend 80% de la hauteur de la section */
+    height: 80%; /* La barre séparatrice prend 80% de la hauteur de la section */
     background-color: black;
     position: absolute;
     top: 10%;
