@@ -57,10 +57,9 @@ body {
 }
 
 .header-image {
-    width: 300px; /* Agrandissement de l'image */
-    height: auto;
+    width: 500px; /* Agrandissement de l'image (avant c'était 300px) */
+    height: auto; /* La hauteur s'ajuste automatiquement pour garder les proportions */
     border-radius: 8px;
-    /* Suppression de l'ombre */
 }
 
 /* Slide 2: Le projet */
