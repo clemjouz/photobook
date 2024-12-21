@@ -203,6 +203,6 @@ iframe {
     position: fixed;
     top: 20px;
     left: 20px;
-    color: #007BFF;
+    color: #ffffff; /* Couleur blanche */
     z-index: 1000;
 }
