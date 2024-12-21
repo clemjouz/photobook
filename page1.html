@@ -10,7 +10,7 @@
         html, body {
             font-family: 'Abril Fatface', cursive;
             margin: 0;
-            padding: 0;
+            padding: 0 20px; /* Ajout de marges latérales */
             height: 100%;
             background-color: #f5f5f5;
             color: #333;
@@ -47,7 +47,7 @@
             gap: 20px; /* Espacement entre les conteneurs */
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 20px 0; /* Espacement vertical */
             box-sizing: border-box;
         }
 
@@ -97,6 +97,7 @@
             display: flex;
             justify-content: space-between;
             transform: translateY(-50%);
+            pointer-events: none; /* Empêche de bloquer les clics en dehors des boutons */
         }
 
         .carousel-button {
@@ -108,6 +109,17 @@
             padding: 10px 15px;
             border-radius: 50%;
             z-index: 10;
+            pointer-events: all; /* Rend les boutons cliquables */
+        }
+
+        .carousel-button#prev {
+            position: absolute;
+            left: 10px;
+        }
+
+        .carousel-button#next {
+            position: absolute;
+            right: 10px;
         }
 
         .carousel-button:focus {
@@ -177,10 +189,10 @@
                 <img src="2.jpg" alt="Image 2">
                 <img src="3.jpg" alt="Image 3">
                 <img src="4.jpg" alt="Image 4">
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-button" id="prev">&#10094;</button>
-                <button class="carousel-button" id="next">&#10095;</button>
+                <div class="carousel-controls">
+                    <button class="carousel-button" id="prev">&#10094;</button>
+                    <button class="carousel-button" id="next">&#10095;</button>
+                </div>
             </div>
         </div>
         <div class="text-container">
