@@ -14,7 +14,8 @@
             height: 100%;
             background-color: #f5f5f5;
             color: #333;
-            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
         }
 
         /* En-tête de la page */
@@ -45,8 +46,8 @@
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-            height: calc(100vh - 220px); /* Réduction pour laisser un espace autour */
-            padding: 20px 40px; /* Espacement autour des contenus */
+            flex: 1; /* Occupe l'espace restant entre l'en-tête et le pied de page */
+            padding: 20px;
             box-sizing: border-box;
         }
 
@@ -54,20 +55,20 @@
         .cover-container,
         .carousel-container,
         .text-container {
-            flex: 1 1 30%; /* Chaque élément prend environ un tiers de la largeur */
+            flex: 1 1 30%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100%; /* Laisse un bon espacement vertical */
-            margin: 0 10px; /* Espacement horizontal entre les éléments */
+            margin: 0 10px;
+            box-sizing: border-box;
         }
 
         .cover-container img,
         .carousel img {
             width: 100%;
             height: auto;
-            max-height: 80%; /* Préserve le ratio et évite les débordements */
+            max-height: 200px; /* Taille cohérente pour les images */
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -77,15 +78,15 @@
             position: relative;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            height: 80%; /* Ajusté pour rester équilibré avec l’image */
+            height: 200px; /* Ajusté pour s'aligner avec les autres contenus */
             width: 100%;
             overflow: hidden;
         }
 
         .carousel img {
             display: none;
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: auto;
         }
 
         .carousel img.active {
@@ -149,6 +150,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            box-sizing: border-box;
         }
 
         footer p {
@@ -160,15 +162,21 @@
             section {
                 flex-direction: column;
                 align-items: center;
-                height: auto;
             }
 
             .cover-container,
             .carousel-container,
             .text-container {
                 flex: 1 1 100%;
-                max-width: 100%;
-                margin-bottom: 20px; /* Espacement entre les blocs */
+                margin-bottom: 20px;
+            }
+
+            .carousel {
+                height: 150px; /* Réduit pour les petits écrans */
+            }
+
+            .carousel img {
+                max-height: 150px;
             }
         }
     </style>
