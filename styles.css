@@ -219,7 +219,7 @@ iframe {
 }
 
 .project-section p {
-    max-width: 800px !important; /* Forcer la largeur maximale */
+    max-width: 1000px !important; /* Forcer la largeur maximale */
     margin: 0 auto !important; /* Centrer le paragraphe */
     line-height: 1.6; /* Améliorer l'espacement entre les lignes */
     text-align: center;
