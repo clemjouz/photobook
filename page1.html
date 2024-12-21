@@ -7,14 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <style>
         /* Corps général */
-        body {
+        html, body {
             font-family: 'Abril Fatface', cursive;
             margin: 0;
             padding: 0;
+            height: 100%; /* Pour occuper toute la hauteur de l'écran */
+            overflow: hidden; /* Empêche le défilement */
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
-            overflow-y: auto;
         }
 
         /* En-tête de la page */
@@ -50,10 +51,11 @@
         /* Section principale */
         section {
             display: flex;
-            padding: 4rem 2rem;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            height: calc(100vh - 100px); /* Hauteur de l'écran moins l'espace pour l'en-tête et le pied de page */
+            padding: 0 2rem;
         }
 
         /* Couverture (image) */
@@ -128,6 +130,7 @@
             color: #ecf0f1;
             text-align: center;
             padding: 1rem 0;
+            height: 50px; /* Fixe la hauteur du pied de page */
         }
 
         footer p {
