@@ -206,3 +206,14 @@ iframe {
     color: #ffffff; /* Couleur blanche */
     z-index: 1000;
 }
+
+/* Liens personnalisés dans le texte */
+.custom-link {
+    color: #ffffff; /* Couleur blanche */
+    text-decoration: none; /* Pas de soulignement */
+    font-weight: bold;
+}
+
+.custom-link:hover {
+    text-decoration: underline; /* Ajout d'un soulignement au survol */
+}
