@@ -80,6 +80,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             height: 100%; /* S'adapte au conteneur parent */
             width: 100%;
+            overflow: hidden; /* Empêche les débordements */
         }
 
         .carousel img {
@@ -107,9 +108,22 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            padding: 10px;
+            padding: 10px 15px;
             border-radius: 50%;
-            z-index: 10; /* Assure la visibilité des flèches */
+            pointer-events: all; /* Rend les clics possibles */
+            z-index: 10; /* Assure la visibilité au-dessus de tout */
+        }
+
+        .carousel-button:focus {
+            outline: none;
+        }
+
+        #prev {
+            margin-left: 10px;
+        }
+
+        #next {
+            margin-right: 10px;
         }
 
         /* Pied de page */
@@ -137,6 +151,10 @@
                 flex: 1 1 100%;
                 max-width: 100%;
                 max-height: 50%; /* Ajuste pour les petits écrans */
+            }
+
+            .carousel-button {
+                padding: 8px 12px; /* Réduit légèrement pour les petits écrans */
             }
         }
     </style>
