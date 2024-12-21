@@ -14,7 +14,7 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
-            overflow-y: auto; /* Scroll activé */
+            overflow-y: auto;
         }
 
         /* En-tête de la page */
@@ -31,22 +31,20 @@
             margin: 0;
         }
 
-        .return-home {
+        /* Icône maison */
+        .home-icon {
             position: absolute;
             top: 20px;
             left: 20px;
-            background-color: #ecf0f1;
-            color: #34495e;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            font-size: 24px;
+            color: #ecf0f1;
+            text-decoration: none;
+            background-color: transparent;
+            transition: color 0.3s ease;
         }
 
-        .return-home:hover {
-            background-color: #bdc3c7;
+        .home-icon:hover {
+            color: #bdc3c7;
         }
 
         /* Section principale */
@@ -68,16 +66,16 @@
             width: 100%;
             height: auto;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .cover-container img:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Carrousel (à droite) */
+        /* Carrousel */
         .carousel-container {
             width: 50%;
             position: relative;
@@ -88,7 +86,7 @@
             width: 100%;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .carousel img {
@@ -155,12 +153,12 @@
     </style>
 </head>
 <body>
-
-    <!-- Bouton retour à l'accueil -->
-    <button class="return-home" onclick="window.location.href='index.html'">Retour à l'accueil</button>
-
     <!-- En-tête -->
     <header>
+        <!-- Icône maison pour le retour à l'accueil -->
+        <a href="index.html" class="home-icon" aria-label="Retour à l'accueil">
+            &#8962;
+        </a>
         <h1>Volume 1</h1>
     </header>
 
@@ -218,29 +216,5 @@
         nextButton.addEventListener('click', nextImage);
         prevButton.addEventListener('click', prevImage);
     </script>
-/* Style de l'icône maison */
-.home-icon {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: #ecf0f1; /* Couleur blanche */
-    text-decoration: none;
-    background-color: transparent;
-    transition: color 0.3s ease;
-}
-
-.home-icon:hover {
-    color: #bdc3c7; /* Couleur plus claire au survol */
-}
-    <!-- En-tête -->
-<header>
-    <!-- Icône maison pour le retour à l'accueil -->
-    <a href="index.html" class="home-icon" aria-label="Retour à l'accueil">
-        &#8962;
-    </a>
-    <h1>Volume 1</h1>
-</header>
-
 </body>
 </html>
