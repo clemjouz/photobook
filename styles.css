@@ -222,7 +222,7 @@ iframe {
     max-width: 1000px !important; /* Forcer la largeur maximale */
     margin: 0 auto !important; /* Centrer le paragraphe */
     line-height: 1.6; /* Améliorer l'espacement entre les lignes */
-    text-align: center;
+    text-align: justified;
     padding: 0 10px; /* Ajouter un peu d'espace interne si nécessaire */
     box-sizing: border-box; /* Assure que padding ne dépasse pas max-width */
 }
