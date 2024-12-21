@@ -46,8 +46,8 @@
             display: flex;
             align-items: center; /* Centre verticalement */
             justify-content: space-between; /* Espace entre les éléments */
-            height: calc(100vh - 150px); /* Hauteur disponible après en-tête et pied de page */
-            padding: 0 1rem;
+            height: calc(100vh - 200px); /* Réduit la hauteur disponible (en-tête et pied de page inclus) */
+            padding: 20px; /* Ajout d'un padding autour de la section */
         }
 
         /* Conteneurs */
@@ -67,7 +67,7 @@
         .carousel img {
             width: 100%;
             height: auto;
-            max-height: 100%; /* Empêche les débordements verticaux */
+            max-height: 80%; /* Réduit la hauteur maximale des images */
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -159,6 +159,8 @@
             section {
                 flex-direction: column;
                 gap: 10px;
+                height: auto; /* Pour permettre l'ajustement en fonction du contenu */
+                padding: 20px; /* Ajout de padding pour les petits écrans */
             }
 
             .cover-container,
