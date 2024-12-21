@@ -45,24 +45,22 @@
         section {
             display: flex;
             align-items: center; /* Centre verticalement */
-            justify-content: center; /* Centre horizontalement */
-            flex-wrap: wrap;
+            justify-content: space-between; /* Espace entre les éléments */
             height: calc(100vh - 150px); /* Hauteur disponible après en-tête et pied de page */
             padding: 0 1rem;
-            gap: 20px; /* Ajoute un espace entre les éléments */
         }
 
         /* Conteneurs */
         .cover-container,
-        .carousel-container {
-            flex: 1 1 40%; /* Flex-grow, shrink, et taille de base */
-            max-width: 400px; /* Limite absolue en largeur */
-            max-height: 300px; /* Limite absolue en hauteur */
+        .carousel-container,
+        .text-container {
+            flex: 1 1 33%; /* Chacune occupe un tiers de l'espace */
+            max-width: 33%; /* Limite la largeur à 33% */
             display: flex;
             align-items: center; /* Centre le contenu verticalement */
             justify-content: center; /* Centre le contenu horizontalement */
             box-sizing: border-box; /* Inclut le padding dans les dimensions */
-            position: relative; /* Nécessaire pour positionner les flèches */
+            height: 100%;
         }
 
         .cover-container img,
@@ -127,6 +125,19 @@
             margin-right: 10px;
         }
 
+        /* Texte */
+        .text-container {
+            padding: 20px; /* Espacement autour du texte */
+            text-align: center; /* Centre le texte */
+            font-size: 1.2rem;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .text-container p {
+            margin: 0;
+        }
+
         /* Pied de page */
         footer {
             background-color: #34495e;
@@ -151,7 +162,8 @@
             }
 
             .cover-container,
-            .carousel-container {
+            .carousel-container,
+            .text-container {
                 flex: 1 1 100%;
                 max-width: 100%;
                 max-height: 50%; /* Ajuste pour les petits écrans */
@@ -183,6 +195,9 @@
                 <button class="carousel-button" id="prev">&#10094;</button>
                 <button class="carousel-button" id="next">&#10095;</button>
             </div>
+        </div>
+        <div class="text-container">
+            <p>Voici quelques photos extraites des chapitres dédiés aux villes de Brno et Olomouc (République tchèque).</p>
         </div>
     </section>
     <footer>
