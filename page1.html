@@ -46,28 +46,29 @@
             display: flex;
             align-items: center; /* Centre verticalement */
             justify-content: space-between; /* Espace entre les éléments */
-            height: calc(100vh - 200px); /* Réduit la hauteur disponible (en-tête et pied de page inclus) */
-            padding: 20px; /* Ajout d'un padding autour de la section */
+            height: calc(100vh - 200px); /* Hauteur disponible sans toucher l'en-tête et le pied de page */
+            padding: 20px 30px; /* Ajout d'espacement autour des contenus */
+            box-sizing: border-box;
         }
 
         /* Conteneurs */
         .cover-container,
         .carousel-container,
         .text-container {
-            flex: 1 1 33%; /* Chacune occupe un tiers de l'espace */
-            max-width: 33%; /* Limite la largeur à 33% */
+            flex: 1 1 30%; /* Chaque élément prend environ un tiers de la largeur */
             display: flex;
+            flex-direction: column;
             align-items: center; /* Centre le contenu verticalement */
             justify-content: center; /* Centre le contenu horizontalement */
-            box-sizing: border-box; /* Inclut le padding dans les dimensions */
-            height: 100%;
+            height: 90%; /* Laisse un peu d'espace autour */
+            box-sizing: border-box;
         }
 
         .cover-container img,
         .carousel img {
             width: 100%;
             height: auto;
-            max-height: 80%; /* Réduit la hauteur maximale des images */
+            max-height: 90%; /* Préserve un bon ratio en hauteur */
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -127,7 +128,7 @@
 
         /* Texte */
         .text-container {
-            padding: 20px; /* Espacement autour du texte */
+            padding: 20px; /* Espacement interne */
             text-align: center; /* Centre le texte */
             font-size: 1.2rem;
             color: #333;
@@ -136,6 +137,8 @@
 
         .text-container p {
             margin: 0;
+            max-width: 90%;
+            line-height: 1.4;
         }
 
         /* Pied de page */
@@ -159,8 +162,8 @@
             section {
                 flex-direction: column;
                 gap: 10px;
-                height: auto; /* Pour permettre l'ajustement en fonction du contenu */
-                padding: 20px; /* Ajout de padding pour les petits écrans */
+                height: auto; /* Permet l'ajustement en fonction du contenu */
+                padding: 10px; /* Réduction pour les petits écrans */
             }
 
             .cover-container,
@@ -172,7 +175,7 @@
             }
 
             .carousel-button {
-                padding: 8px 12px; /* Réduit légèrement pour les petits écrans */
+                padding: 8px 12px; /* Réduction pour les petits écrans */
             }
         }
     </style>
