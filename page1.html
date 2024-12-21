@@ -50,14 +50,15 @@
             height: calc(100vh - 150px); /* Hauteur disponible après header et footer */
             padding: 0 1rem;
             gap: 20px; /* Ajoute un espace entre les éléments */
+            overflow: hidden;
         }
 
         /* Conteneurs */
         .cover-container,
         .carousel-container {
-            flex: 1 1 45%; /* Flex-grow, shrink, et taille de base */
-            max-width: 45%; /* Limite la largeur maximum */
-            max-height: 100%; /* Empêche les dépassements verticaux */
+            flex: 1 1 40%; /* Flex-grow, shrink, et taille de base */
+            max-width: 400px; /* Limite absolue en largeur */
+            max-height: 300px; /* Limite absolue en hauteur */
             box-sizing: border-box; /* Inclut le padding dans les dimensions */
         }
 
@@ -65,6 +66,7 @@
         .carousel img {
             width: 100%;
             height: auto;
+            max-height: 100%; /* Empêche les débordements verticaux */
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -74,10 +76,14 @@
             position: relative;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            height: 100%; /* S'adapte au conteneur parent */
+            width: 100%;
         }
 
         .carousel img {
             display: none;
+            max-width: 100%;
+            max-height: 100%;
         }
 
         .carousel img.active {
@@ -97,10 +103,11 @@
             background-color: #34495e;
             color: #ecf0f1;
             border: none;
-            font-size: 2rem;
+            font-size: 1.5rem;
             cursor: pointer;
             padding: 10px;
             border-radius: 50%;
+            z-index: 10; /* Assure la visibilité des flèches */
         }
 
         /* Pied de page */
@@ -127,6 +134,7 @@
             .carousel-container {
                 flex: 1 1 100%;
                 max-width: 100%;
+                max-height: 50%; /* Ajuste pour les petits écrans */
             }
         }
     </style>
