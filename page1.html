@@ -12,7 +12,6 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
@@ -44,10 +43,10 @@
         /* Section principale */
         section {
             display: flex;
-            align-items: center; /* Centre verticalement */
-            justify-content: space-between; /* Espace entre les éléments */
-            height: calc(100vh - 200px); /* Hauteur disponible sans toucher l'en-tête et le pied de page */
-            padding: 20px 30px; /* Ajout d'espacement autour des contenus */
+            align-items: flex-start;
+            justify-content: space-between;
+            height: calc(100vh - 220px); /* Réduction pour laisser un espace autour */
+            padding: 20px 40px; /* Espacement autour des contenus */
             box-sizing: border-box;
         }
 
@@ -58,17 +57,17 @@
             flex: 1 1 30%; /* Chaque élément prend environ un tiers de la largeur */
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centre le contenu verticalement */
-            justify-content: center; /* Centre le contenu horizontalement */
-            height: 90%; /* Laisse un peu d'espace autour */
-            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            height: 100%; /* Laisse un bon espacement vertical */
+            margin: 0 10px; /* Espacement horizontal entre les éléments */
         }
 
         .cover-container img,
         .carousel img {
             width: 100%;
             height: auto;
-            max-height: 90%; /* Préserve un bon ratio en hauteur */
+            max-height: 80%; /* Préserve le ratio et évite les débordements */
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -78,9 +77,9 @@
             position: relative;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            height: 100%; /* S'adapte au conteneur parent */
+            height: 80%; /* Ajusté pour rester équilibré avec l’image */
             width: 100%;
-            overflow: hidden; /* Empêche les débordements */
+            overflow: hidden;
         }
 
         .carousel img {
@@ -110,8 +109,7 @@
             cursor: pointer;
             padding: 10px 15px;
             border-radius: 50%;
-            pointer-events: all; /* Rend les clics possibles */
-            z-index: 10; /* Assure la visibilité au-dessus de tout */
+            z-index: 10;
         }
 
         .carousel-button:focus {
@@ -128,8 +126,8 @@
 
         /* Texte */
         .text-container {
-            padding: 20px; /* Espacement interne */
-            text-align: center; /* Centre le texte */
+            padding: 20px;
+            text-align: center;
             font-size: 1.2rem;
             color: #333;
             box-sizing: border-box;
@@ -147,10 +145,10 @@
             color: #ecf0f1;
             text-align: center;
             padding: 1rem 0;
-            height: 60px; /* Hauteur ajustée pour permettre le centrage */
+            height: 60px;
             display: flex;
             justify-content: center;
-            align-items: center; /* Centre le texte verticalement */
+            align-items: center;
         }
 
         footer p {
@@ -161,9 +159,8 @@
         @media (max-width: 768px) {
             section {
                 flex-direction: column;
-                gap: 10px;
-                height: auto; /* Permet l'ajustement en fonction du contenu */
-                padding: 10px; /* Réduction pour les petits écrans */
+                align-items: center;
+                height: auto;
             }
 
             .cover-container,
@@ -171,11 +168,7 @@
             .text-container {
                 flex: 1 1 100%;
                 max-width: 100%;
-                max-height: 50%; /* Ajuste pour les petits écrans */
-            }
-
-            .carousel-button {
-                padding: 8px 12px; /* Réduction pour les petits écrans */
+                margin-bottom: 20px; /* Espacement entre les blocs */
             }
         }
     </style>
