@@ -225,4 +225,5 @@ iframe {
     text-align: justify;
     padding: 0 10px; /* Ajouter un peu d'espace interne si nécessaire */
     box-sizing: border-box; /* Assure que padding ne dépasse pas max-width */
+    margin: 0 auto; /* Centrer le paragraphe horizontalement */
 }
