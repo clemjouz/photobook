@@ -18,13 +18,12 @@
             flex-direction: column;
         }
 
-        /* En-tête de la page */
+        /* En-tête */
         header {
             background-color: #34495e;
             color: #ecf0f1;
             text-align: center;
             padding: 1.5rem 0;
-            position: relative;
         }
 
         header h1 {
@@ -43,10 +42,11 @@
 
         /* Section principale */
         section {
+            flex: 1; /* Remplit l'espace entre l'en-tête et le pied de page */
             display: flex;
-            align-items: flex-start;
+            gap: 20px; /* Espacement entre les conteneurs */
             justify-content: space-between;
-            flex: 1; /* Occupe l'espace restant entre l'en-tête et le pied de page */
+            align-items: center;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -55,20 +55,19 @@
         .cover-container,
         .carousel-container,
         .text-container {
-            flex: 1 1 30%;
+            flex: 1; /* Chaque conteneur occupe un tiers de la largeur disponible */
+            max-width: 30%; /* Limite la largeur pour ne pas trop s'étaler */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 0 10px;
-            box-sizing: border-box;
         }
 
         .cover-container img,
         .carousel img {
             width: 100%;
             height: auto;
-            max-height: 200px; /* Taille cohérente pour les images */
+            max-height: calc(100vh - 200px); /* Empêche les débordements entre l'en-tête et le pied de page */
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -76,17 +75,15 @@
         /* Carrousel */
         .carousel {
             position: relative;
+            width: 100%;
+            max-height: calc(100vh - 200px); /* Ajusté pour l'espace disponible */
+            overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            height: 200px; /* Ajusté pour s'aligner avec les autres contenus */
-            width: 100%;
-            overflow: hidden;
         }
 
         .carousel img {
             display: none;
-            width: 100%;
-            height: auto;
         }
 
         .carousel img.active {
@@ -117,27 +114,18 @@
             outline: none;
         }
 
-        #prev {
-            margin-left: 10px;
-        }
-
-        #next {
-            margin-right: 10px;
-        }
-
         /* Texte */
         .text-container {
-            padding: 20px;
+            padding: 10px;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #333;
-            box-sizing: border-box;
         }
 
         .text-container p {
             margin: 0;
             max-width: 90%;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         /* Pied de page */
@@ -147,10 +135,6 @@
             text-align: center;
             padding: 1rem 0;
             height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
         }
 
         footer p {
@@ -162,21 +146,18 @@
             section {
                 flex-direction: column;
                 align-items: center;
+                gap: 10px;
             }
 
             .cover-container,
             .carousel-container,
             .text-container {
-                flex: 1 1 100%;
-                margin-bottom: 20px;
-            }
-
-            .carousel {
-                height: 150px; /* Réduit pour les petits écrans */
+                max-width: 100%;
+                margin-bottom: 10px;
             }
 
             .carousel img {
-                max-height: 150px;
+                max-height: 200px;
             }
         }
     </style>
