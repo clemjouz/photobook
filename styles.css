@@ -70,7 +70,6 @@ body {
 .project-section h2 {
     font-family: 'Abril Fatface', cursive;
     font-size: 4rem; /* Agrandir le titre */
-    text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
